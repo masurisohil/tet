@@ -539,7 +539,7 @@ let AddSalesOrderComponent = class AddSalesOrderComponent {
             }, 200);
         }
         else {
-            this.formErrors.order_no = "* Plese Enter Order Number";
+            this.formErrors.order_no = "* Please Enter Order Number";
         }
     }
     editform(id, index, data) {

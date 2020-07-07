@@ -776,7 +776,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               _this10.orderDate = _this10.addForm.value.sales_order_date;
             }, 200);
           } else {
-            this.formErrors.order_no = "* Plese Enter Order Number";
+            this.formErrors.order_no = "* Please Enter Order Number";
           }
         }
       }, {

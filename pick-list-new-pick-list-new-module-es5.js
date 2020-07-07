@@ -160,7 +160,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           if (canDelete) {
             actions['delete'] = {
-              path: 'po/',
+              path: 'picking/sales-order-list/',
               id: 'sales_order_id'
             };
           }

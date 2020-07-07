@@ -102,7 +102,7 @@ let PickListNewComponent = class PickListNewComponent {
         }
         if (canDelete) {
             actions['delete'] = {
-                path: 'po/',
+                path: 'picking/sales-order-list/',
                 id: 'sales_order_id'
             };
         }

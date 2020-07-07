@@ -378,7 +378,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (this.addForm.value.sales_order_id) {
             this.productAdd.addObject();
           } else {
-            this.formErrors.order_id = "* Plese Select Order Number";
+            this.formErrors.order_id = "* Please Select Order Number";
           }
         }
       }, {
@@ -465,7 +465,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             $('#checkBoxproAll').prop('checked', false);
             this.ProductItem = this.ProductItem.filter(function (object) {
               console.log(object);
-              return String(object.product.value) !== String(obj.product.value);
+              return String(object.product_id) !== String(obj.product.value);
             });
           }
         }

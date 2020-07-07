@@ -237,7 +237,7 @@ let AddPicklistComponent = class AddPicklistComponent {
             this.productAdd.addObject();
         }
         else {
-            this.formErrors.order_id = "* Plese Select Order Number";
+            this.formErrors.order_id = "* Please Select Order Number";
         }
     }
     onProductSubmit(data) {
@@ -318,7 +318,7 @@ let AddPicklistComponent = class AddPicklistComponent {
             $('#checkBoxproAll').prop('checked', false);
             this.ProductItem = this.ProductItem.filter((object) => {
                 console.log(object);
-                return String(object.product.value) !== String(obj.product.value);
+                return String(object.product_id) !== String(obj.product.value);
             });
         }
     }
