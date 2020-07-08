@@ -1066,6 +1066,10 @@ const routes = [
                 path: 'tag',
                 loadChildren: () => __webpack_require__.e(/*! import() | tag-tag-module */ "tag-tag-module").then(__webpack_require__.bind(null, /*! ./tag/tag.module */ "./src/app/pages/master/tag/tag.module.ts")).then(m => m.TagModule)
             },
+            {
+                path: 'outbound-configuration',
+                loadChildren: () => __webpack_require__.e(/*! import() | outbound-configuration-outbound-configuration-module */ "outbound-configuration-outbound-configuration-module").then(__webpack_require__.bind(null, /*! ./outbound-configuration/outbound-configuration.module */ "./src/app/pages/master/outbound-configuration/outbound-configuration.module.ts")).then(m => m.OutboundConfigurationModule)
+            },
         ]
     }
 ];
@@ -1188,6 +1192,10 @@ NavLink.asideNav = [
     {
         asidText: 'Tag',
         asidUrl: '/manage/tag'
+    },
+    {
+        asidText: 'Outbound Configuration',
+        asidUrl: '/manage/outbound-configuration'
     }
 ];
 NavLink.locationNav = [

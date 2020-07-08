@@ -2626,7 +2626,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       add_sales_order: "Add Sales Order | ".concat(APP_NAME),
       edit_sales_order: "Edit Sales Order | ".concat(APP_NAME),
       view_sales_order: "View Sales Order | ".concat(APP_NAME),
-      add_damage_product: "Add Damage Product ".concat(APP_NAME)
+      add_damage_product: "Add Damage Product ".concat(APP_NAME),
+      add_outbound_configuration: "Add Outbound Configuration | ".concat(APP_NAME),
+      edit_outbound_configuration: "Edit Outbound Configuration | ".concat(APP_NAME),
+      view_outbound_configuration: "View Outbound Configuration | ".concat(APP_NAME)
     };
     var errorMessage = {
       change_password_success: 'Your password changed Successfully',

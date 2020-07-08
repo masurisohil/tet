@@ -1690,6 +1690,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return m.TagModule;
           });
         }
+      }, {
+        path: 'outbound-configuration',
+        loadChildren: function loadChildren() {
+          return __webpack_require__.e(
+          /*! import() | outbound-configuration-outbound-configuration-module */
+          "outbound-configuration-outbound-configuration-module").then(__webpack_require__.bind(null,
+          /*! ./outbound-configuration/outbound-configuration.module */
+          "./src/app/pages/master/outbound-configuration/outbound-configuration.module.ts")).then(function (m) {
+            return m.OutboundConfigurationModule;
+          });
+        }
       }]
     }];
 
@@ -1852,6 +1863,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       asidText: 'Tag',
       asidUrl: '/manage/tag'
+    }, {
+      asidText: 'Outbound Configuration',
+      asidUrl: '/manage/outbound-configuration'
     }];
     NavLink.locationNav = [{
       asidText: 'Area',

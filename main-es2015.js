@@ -1524,7 +1524,10 @@ const pageTitles = {
     add_sales_order: `Add Sales Order | ${APP_NAME}`,
     edit_sales_order: `Edit Sales Order | ${APP_NAME}`,
     view_sales_order: `View Sales Order | ${APP_NAME}`,
-    add_damage_product: `Add Damage Product ${APP_NAME}`
+    add_damage_product: `Add Damage Product ${APP_NAME}`,
+    add_outbound_configuration: `Add Outbound Configuration | ${APP_NAME}`,
+    edit_outbound_configuration: `Edit Outbound Configuration | ${APP_NAME}`,
+    view_outbound_configuration: `View Outbound Configuration | ${APP_NAME}`,
 };
 const errorMessage = {
     change_password_success: 'Your password changed Successfully',
