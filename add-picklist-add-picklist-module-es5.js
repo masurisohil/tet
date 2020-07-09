@@ -41,7 +41,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"container-fluid\">\r\n    <div class=\"page-header border-b\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n                <h2 class=\"mr-auto\">Generate Picklist</h2>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n    <div class=\"card\">\r\n        <form [formGroup]=\"addForm\" (ngSubmit)=\"submitForm(addForm)\" role=\"form\">\r\n            <div class=\"card-body\">\r\n                <div class=\"form-group row\" >\r\n                    <label class=\"control-label text-md-right col-md-3\">Order Number <em>*</em></label>\r\n                    <div class=\"d-flex\" [ngClass]=\"{'has-error': formErrors.order_id}\">\r\n                        <ng-select style=\"width:175px\" [formControl]=\"addForm.controls['sales_order_id']\"\r\n                            [items]=\"orderNumberArray\" (change)=\"onOrderChange($event)\" bindLabel=\"label\"\r\n                            bindValue=\"value\" placeholder=\"Select Order\">\r\n                        </ng-select>\r\n                        <span *ngIf=\"formErrors.order_id\" class=\"help-block\" [innerHTML]=\"formErrors.order_id\"></span>\r\n                    </div>\r\n                </div>\r\n                <div class=\"row mt-2\">\r\n                    <!-- <div class=\"col-md-12\">\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"control-label text-md-right col-md-3\">Number Of Order</label>\r\n                            <input number type=\"text\" class=\"form-control \" style=\"width: 175px;\" placeholder=\"\">\r\n                        </div>\r\n                    </div> -->\r\n                    <div class=\"col-md-12\">\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"control-label text-md-right col-md-3\">Date of Receipt</label>\r\n                            <div class=\"date-picker\" style=\"width: 175px;\">\r\n                                <ng2-flatpickr [setDate]=\"currentDate\" [formControl]=\"addForm.controls['receipt_date']\"\r\n                                    [config]=\"exampleOptions\">\r\n                                </ng2-flatpickr>\r\n                                <span class=\"date-picker-icon\">\r\n                                    <span class=\"fa fa-calendar\"></span>\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"form-group row\">\r\n                    <label class=\"control-label text-md-right col-md-3\">Add New Products :</label>\r\n                    <button type=\"button\" (click)=\"addProduct()\" class=\"btn btn-primary\">Add</button>\r\n                </div>\r\n\r\n                <div *ngIf=\"orderDetails\" class=\"mt-4 border-top border-bottom pt-3\">\r\n                    <div class=\"row mb-4\">\r\n                        <div class=\"col-12 text-center\">\r\n                            <p class=\"mb-0\">PickList No. : {{orderDetails?.pick_list_no}}</p>\r\n                            <h6 class=\"ml-3 mb-0 border-bottom d-inline pb-2 px-3\">{{orderDetails?.client_id?.label}}\r\n                            </h6>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-sm-6\">\r\n                            <div class=\"row\">\r\n                                <div *ngIf=\"orderDetails?.client_address[0]\" class=\"col-md-5\">\r\n                                    <h6>Sold To:</h6>\r\n                                    <div class=\"mt-1\">\r\n\r\n                                        {{orderDetails?.client_address[0]?.street_address}}<br />\r\n                                        {{orderDetails?.client_address[0]?.label}}-\r\n                                        {{orderDetails?.client_address[0]?.pin_code}}<br />\r\n                                        {{orderDetails?.client_address[0]?.state}} ,\r\n                                        {{orderDetails?.client_address[0]?.country_name}}\r\n                                        <br />\r\n                                    </div>\r\n                                </div>\r\n                                <div *ngIf=\"orderDetails?.client_address[0]\" class=\"col-md-5\">\r\n                                    <h6>Ship To:</h6>\r\n                                    <p class=\"mt-1\">\r\n                                        {{orderDetails?.client_address[0]?.street_address}}<br />\r\n                                        {{orderDetails?.client_address[0]?.label}}-\r\n                                        {{orderDetails?.client_address[0]?.pin_code}}<br />\r\n                                        {{orderDetails?.client_address[0]?.state}} ,\r\n                                        {{orderDetails?.client_address[0]?.country_name}}\r\n                                        <br />\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"col-sm-6\">\r\n\r\n                            <div class=\"row  justify-content-end text-right\">\r\n                                <div class=\"col-md-6 col-lg-4\">\r\n                                    <div><label class=\"mb-0 text-muted font-w\">Sales Order Number</label>\r\n                                        <div class=\"\"> {{orderDetails?.sales_order_no}} </div>\r\n                                    </div>\r\n                                    <div class=\"mt-2\"><label class=\"mb-0 text-muted font-w\">Customer Number</label>\r\n                                        <div class=\"\"> {{orderDetails?.client_id?.client_code}}\r\n\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col-md-6 col-lg-4\">\r\n                                    <div><label class=\"mb-0 text-muted font-w\">Sales Order Date</label>\r\n                                        <div class=\"\">\r\n                                            {{orderDetails?.sales_order_date |date:date_format :timezone}}\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"mt-2\"><label class=\"mb-0 text-muted font-w\">PickList Date</label>\r\n                                        <div class=\"\"> {{currentDate |date:date_format :timezone}}</div>\r\n                                    </div>\r\n                                </div>\r\n\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"mt-3\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col\">\r\n                            <h5>Products</h5>\r\n                            <span *ngIf=\"formErrors.product\" class=\"help-block\" [innerHTML]=\"formErrors.product\"></span>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row mt-2\">\r\n                        <div class=\"col\">\r\n                            <div class=\"table-responsive-md\">\r\n                                <table class=\"table\">\r\n                                    <thead class=\"thead-dark\">\r\n                                        <tr>\r\n                                            <th class=\"align-items-center d-flex\">\r\n                                                <div class=\"form-check form-check-inline mr-0\">\r\n                                                    <div class=\"checkbox-container\">\r\n                                                        <input id=\"checkBoxproAll\"\r\n                                                            (change)=\"markAllProduct($event.target.checked)\"\r\n                                                            class=\"form-check-input\" type=\"checkbox\" value=\"all\">\r\n                                                        <span class=\"checkmark\"></span>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </th>\r\n                                            <th>SKU</th>\r\n                                            <th>Product</th>\r\n                                            <th class=\"text-center\">Order Quantity</th>\r\n                                        </tr>\r\n                                    </thead>\r\n                                    <tbody>\r\n                                        <tr *ngFor=\"let item of productDetailList; let i=index\">\r\n                                            <td class=\"align-items-center d-flex\">\r\n                                                <div class=\"form-check form-check-inline mr-0\">\r\n                                                    <div class=\"checkbox-container\">\r\n                                                        <input id=\"checkBoxpro{{i}}\"\r\n                                                            (change)=\"oneProduct(item, $event.target.checked)\"\r\n                                                            class=\"form-check-input pro-chk\" type=\"checkbox\">\r\n                                                        <span class=\"checkmark\"></span>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </td>\r\n\r\n                                            <td>{{item?.product?.sku_no}}</td>\r\n                                            <td>{{item?.product?.label}}</td>\r\n                                            <td class=\"text-center\">{{item?.product_qty |number}}</td>\r\n                                        </tr>\r\n                                    </tbody>\r\n                                </table>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"row\">\r\n                    <div class=\"col\">\r\n                        <div class=\"text-right border-top pt-4 mt-5 mb-3\">\r\n                            <button type=\"button\" [routerLink]=\"['/outbound/pick-list-new/']\"\r\n                                class=\"btn btn-light\">Cancel</button>\r\n                            <button type=\"submit\" class=\"btn btn-secondary ml-2\">Generate</button>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>\r\n<app-product-list-popup [ProductList]=\"orderDetails?.product_list\" (onProductSubmit)=\"onProductSubmit($event)\">\r\n</app-product-list-popup>";
+    __webpack_exports__["default"] = "<div class=\"container-fluid\">\r\n    <div class=\"page-header border-b\">\r\n        <div class=\"row\">\r\n            <div class=\"col\">\r\n                <h2 class=\"mr-auto\">Generate Picklist</h2>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n    <div class=\"card\">\r\n        <form [formGroup]=\"addForm\" (ngSubmit)=\"submitForm(addForm)\" role=\"form\">\r\n            <div class=\"card-body\">\r\n                <div class=\"form-group row\">\r\n                    <label class=\"control-label text-md-right col-md-3\">Order Number <em>*</em></label>\r\n                    <div class=\"d-flex\" [ngClass]=\"{'has-error': formErrors.order_id}\">\r\n                        <ng-select style=\"width:175px\" [formControl]=\"addForm.controls['sales_order_id']\"\r\n                            [items]=\"orderNumberArray\" (change)=\"onOrderChange($event)\" bindLabel=\"label\"\r\n                            bindValue=\"value\" placeholder=\"Select Order\">\r\n                        </ng-select>\r\n                        <span *ngIf=\"formErrors.order_id\" class=\"help-block\" [innerHTML]=\"formErrors.order_id\"></span>\r\n                    </div>\r\n                </div>\r\n                <div class=\"row mt-2\">\r\n                    <!-- <div class=\"col-md-12\">\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"control-label text-md-right col-md-3\">Number Of Order</label>\r\n                            <input number type=\"text\" class=\"form-control \" style=\"width: 175px;\" placeholder=\"\">\r\n                        </div>\r\n                    </div> -->\r\n                    <div class=\"col-md-12\">\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"control-label text-md-right col-md-3\">Date of Receipt</label>\r\n                            <div class=\"date-picker\" style=\"width: 175px;\">\r\n                                <ng2-flatpickr [setDate]=\"currentDate\" [formControl]=\"addForm.controls['receipt_date']\"\r\n                                    [config]=\"exampleOptions\">\r\n                                </ng2-flatpickr>\r\n                                <span class=\"date-picker-icon\">\r\n                                    <span class=\"fa fa-calendar\"></span>\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"form-group row\">\r\n                    <label class=\"control-label text-md-right col-md-3\">Add New Products :</label>\r\n                    <button type=\"button\" (click)=\"addProduct()\" class=\"btn btn-primary\">Add</button>\r\n                </div>\r\n\r\n                <div *ngIf=\"orderDetails\" class=\"mt-4 border-top border-bottom pt-3\">\r\n                    <div class=\"row mb-4\">\r\n                        <div class=\"col-12 text-center\">\r\n                            <p class=\"mb-0\">PickList No. : {{orderDetails?.pick_list_no}}</p>\r\n                            <h6 class=\"ml-3 mb-0 border-bottom d-inline pb-2 px-3\">{{orderDetails?.client_id?.label}}\r\n                            </h6>\r\n\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-sm-6\">\r\n                            <div class=\"row\">\r\n                                <div *ngIf=\"orderDetails?.client_address[0]\" class=\"col-md-5\">\r\n                                    <h6>Sold To:</h6>\r\n                                    <div class=\"mt-1\">\r\n\r\n                                        {{orderDetails?.client_address[0]?.street_address}}<br />\r\n                                        {{orderDetails?.client_address[0]?.label}}-\r\n                                        {{orderDetails?.client_address[0]?.pin_code}}<br />\r\n                                        {{orderDetails?.client_address[0]?.state}} ,\r\n                                        {{orderDetails?.client_address[0]?.country_name}}\r\n                                        <br />\r\n                                    </div>\r\n                                </div>\r\n                                <div *ngIf=\"orderDetails?.client_address[0]\" class=\"col-md-5\">\r\n                                    <h6>Ship To:</h6>\r\n                                    <p class=\"mt-1\">\r\n                                        {{orderDetails?.client_address[0]?.street_address}}<br />\r\n                                        {{orderDetails?.client_address[0]?.label}}-\r\n                                        {{orderDetails?.client_address[0]?.pin_code}}<br />\r\n                                        {{orderDetails?.client_address[0]?.state}} ,\r\n                                        {{orderDetails?.client_address[0]?.country_name}}\r\n                                        <br />\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"col-sm-6\">\r\n\r\n                            <div class=\"row  justify-content-end text-right\">\r\n                                <div class=\"col-md-6 col-lg-4\">\r\n                                    <div><label class=\"mb-0 text-muted font-w\">Sales Order Number</label>\r\n                                        <div class=\"\"> {{orderDetails?.sales_order_no}} </div>\r\n                                    </div>\r\n                                    <div class=\"mt-2\"><label class=\"mb-0 text-muted font-w\">Customer Number</label>\r\n                                        <div class=\"\"> {{orderDetails?.client_id?.client_code}}\r\n\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col-md-6 col-lg-4\">\r\n                                    <div><label class=\"mb-0 text-muted font-w\">Sales Order Date</label>\r\n                                        <div class=\"\">\r\n                                            {{orderDetails?.sales_order_date |date:date_format :timezone}}\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"mt-2\"><label class=\"mb-0 text-muted font-w\">PickList Date</label>\r\n                                        <div class=\"\"> {{currentDate |date:date_format :timezone}}</div>\r\n                                    </div>\r\n                                </div>\r\n\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"mt-3\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col\">\r\n                            <h5>Products</h5>\r\n                            <span *ngIf=\"formErrors.product\" class=\"help-block\" [innerHTML]=\"formErrors.product\"></span>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row mt-2\">\r\n                        <div class=\"col\">\r\n                            <div class=\"table-responsive-md\">\r\n                                <table class=\"table\">\r\n                                    <thead class=\"thead-dark\">\r\n                                        <tr>\r\n                                            <th class=\"align-items-center d-flex\">\r\n                                                <div class=\"form-check form-check-inline mr-0\">\r\n                                                    <div class=\"checkbox-container\">\r\n                                                        <input id=\"checkBoxproAll\"\r\n                                                            (change)=\"markAllProduct($event.target.checked)\"\r\n                                                            class=\"form-check-input\" type=\"checkbox\" value=\"all\">\r\n                                                        <span class=\"checkmark\"></span>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </th>\r\n                                            <th>SKU</th>\r\n                                            <th>Product</th>\r\n                                            <th>Location</th>\r\n                                            <th class=\"text-center\">Order Quantity</th>\r\n                                            <th>Price</th>\r\n                                            <th>Amount</th>\r\n                                        </tr>\r\n                                    </thead>\r\n                                    <tbody>\r\n                                        <tr *ngFor=\"let item of productDetailList; let i=index\">\r\n                                            <td class=\"align-items-center d-flex\">\r\n                                                <div class=\"form-check form-check-inline mr-0\">\r\n                                                    <div class=\"checkbox-container\">\r\n                                                        <input id=\"checkBoxpro{{i}}\"\r\n                                                            (change)=\"oneProduct(item, $event.target.checked)\"\r\n                                                            class=\"form-check-input pro-chk\" type=\"checkbox\">\r\n                                                        <span class=\"checkmark\"></span>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </td>\r\n                                            <td>{{item?.product?.sku_no}}</td>\r\n                                            <td>{{item?.product?.label}}</td>\r\n                                            <td>{{item?.location}}</td>\r\n                                            <td class=\"text-center\">{{item?.product_qty |number}}</td>\r\n                                            <td> {{currentCompany?.currency?.label }} {{item?.price |number}}</td>\r\n                                            <td> {{currentCompany?.currency?.label }} {{item?.amount |number}}</td>\r\n                                        </tr>\r\n                                        <tr *ngIf=\"productDetailList.length == 0\">\r\n                                            <td colspan=\"7\">No records found</td>\r\n                                        </tr>\r\n                                    </tbody>\r\n                                </table>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"row\">\r\n                    <div class=\"col\">\r\n                        <div class=\"text-right border-top pt-4 mt-5 mb-3\">\r\n                            <button type=\"button\" [routerLink]=\"['/outbound/pick-list-new/']\"\r\n                                class=\"btn btn-light\">Cancel</button>\r\n                            <button type=\"submit\" class=\"btn btn-secondary ml-2\">Generate</button>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>\r\n<app-product-list-popup [ProductList]=\"orderDetails?.product_list\" (onProductSubmit)=\"onProductSubmit($event)\">\r\n</app-product-list-popup>";
     /***/
   },
 
@@ -309,6 +309,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         this.dataService.currentCompany.subscribe(function (response) {
           if (response) {
+            _this.currentCompany = response;
             _this.timezone = String(response.timezone.format);
             _this.time_format = response.time_format.label;
             _this.date_format = response.date_format.label;
@@ -384,12 +385,28 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "onProductSubmit",
         value: function onProductSubmit(data) {
-          this.productDetailList = data;
+          var _this4 = this;
+
+          console.log(data);
+
+          if (data && data.length > 0) {
+            data.filter(function (obj) {
+              if (obj.location_wise_product_list && obj.location_wise_product_list.length > 0) {
+                obj.location_wise_product_list.filter(function (data, i) {
+                  data['id'] = i;
+
+                  _this4.productDetailList.push(data);
+                });
+              }
+            });
+          }
+
+          console.log(this.productDetailList);
         }
       }, {
         key: "submitForm",
         value: function submitForm(formData) {
-          var _this4 = this;
+          var _this5 = this;
 
           console.log(formData.value);
 
@@ -407,39 +424,39 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
               if (this.isEditing) {
                 this.pickListNewService.editPickListNew(this.editId, data).subscribe(function (response) {
-                  _this4.showLoader = false;
+                  _this5.showLoader = false;
 
                   if (response.success) {
-                    _this4.router.navigateByUrl('/outbound/pick-list-new');
+                    _this5.router.navigateByUrl('/outbound/pick-list-new');
                   } else {
                     response.error.map(function (obj) {
                       if (obj.hasOwnProperty('sales_order_id')) {
-                        _this4.formErrors['sales_order_id'] = obj['sales_order_id'];
+                        _this5.formErrors['sales_order_id'] = obj['sales_order_id'];
                       } else {
-                        _this4.formErrors['apierror'] = "* ".concat(response.error);
+                        _this5.formErrors['apierror'] = "* ".concat(response.error);
                       }
                     });
                   }
                 }, function (error) {
-                  _this4.showLoader = false;
+                  _this5.showLoader = false;
                 });
               } else {
                 this.pickListNewService.addPickListNew(data).subscribe(function (response) {
-                  _this4.showLoader = false;
+                  _this5.showLoader = false;
 
                   if (response.success) {
-                    _this4.router.navigateByUrl('/outbound/pick-list-new');
+                    _this5.router.navigateByUrl('/outbound/pick-list-new');
                   } else {
                     response.error.map(function (obj) {
                       if (obj.hasOwnProperty('sales_order_id')) {
-                        _this4.formErrors['sales_order_id'] = obj['sales_order_id'];
+                        _this5.formErrors['sales_order_id'] = obj['sales_order_id'];
                       } else {
-                        _this4.formErrors['apierror'] = "* ".concat(response.error);
+                        _this5.formErrors['apierror'] = "* ".concat(response.error);
                       }
                     });
                   }
                 }, function (error) {
-                  _this4.showLoader = false;
+                  _this5.showLoader = false;
                 });
               }
             } else {
@@ -452,10 +469,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function oneProduct(obj, checked) {
           if (checked) {
             var object = new Object();
+            object['id'] = obj.id;
             object['product_id'] = obj.product.value;
             object['price'] = obj.price;
             object['amount'] = obj.amount;
             object['product_qty'] = obj.product_qty;
+            object['bin_id'] = obj.location_detail.bin_id;
+            object['location'] = obj.location;
             this.ProductItem.push(object);
 
             if (this.ProductItem.length === this.ProductItem.length) {
@@ -464,10 +484,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           } else {
             $('#checkBoxproAll').prop('checked', false);
             this.ProductItem = this.ProductItem.filter(function (object) {
-              console.log(object);
-              return String(object.product_id) !== String(obj.product.value);
+              console.log(obj.product.value, object.product_id);
+              return String(object.id) !== String(obj.id);
             });
           }
+
+          console.log(this.ProductItem);
         }
       }, {
         key: "markAllProduct",
@@ -475,10 +497,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (checked) {
             this.ProductItem = this.productDetailList.map(function (obj, index) {
               var object = new Object();
+              object['id'] = obj.id;
               object['product_id'] = obj.product.value;
               object['price'] = obj.price;
               object['amount'] = obj.amount;
               object['product_qty'] = obj.product_qty;
+              object['bin_id'] = obj.location_detail.bin_id;
+              object['location'] = obj.location;
               $('.pro-chk').prop('checked', true);
               return object;
             });
@@ -486,6 +511,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             $('.pro-chk').prop('checked', false);
             this.ProductItem = [];
           }
+
+          console.log(this.ProductItem);
         }
       }, {
         key: "ngAfterViewChecked",
