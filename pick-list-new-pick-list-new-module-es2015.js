@@ -111,7 +111,6 @@ let PickListNewComponent = class PickListNewComponent {
     }
     getObjects() {
         const params = { page: this.currentPage };
-        console.log(this.status_id);
         if (this.status_id) {
             params.status_id = this.status_id;
         }
@@ -205,12 +204,12 @@ const routes = [
     },
     {
         path: 'add',
-        loadChildren: () => Promise.all(/*! import() | add-picklist-add-picklist-module */[__webpack_require__.e("default~add-picklist-add-picklist-module~add-sales-order-add-sales-order-module~generate-generate-mo~7fdd0daa"), __webpack_require__.e("common"), __webpack_require__.e("add-picklist-add-picklist-module")]).then(__webpack_require__.bind(null, /*! ./add-picklist/add-picklist.module */ "./src/app/pages/outbound/pick-list-new/add-picklist/add-picklist.module.ts")).then(m => m.AddPicklistModule),
+        loadChildren: () => Promise.all(/*! import() | add-picklist-add-picklist-module */[__webpack_require__.e("default~add-picklist-add-picklist-module~add-sales-order-add-sales-order-module~generate-generate-mo~7fdd0daa"), __webpack_require__.e("default~add-packing-add-packing-module~add-picklist-add-picklist-module"), __webpack_require__.e("add-picklist-add-picklist-module")]).then(__webpack_require__.bind(null, /*! ./add-picklist/add-picklist.module */ "./src/app/pages/outbound/pick-list-new/add-picklist/add-picklist.module.ts")).then(m => m.AddPicklistModule),
         data: { title: 'add_pick_list' },
     },
     {
         path: 'edit/:id',
-        loadChildren: () => Promise.all(/*! import() | add-picklist-add-picklist-module */[__webpack_require__.e("default~add-picklist-add-picklist-module~add-sales-order-add-sales-order-module~generate-generate-mo~7fdd0daa"), __webpack_require__.e("common"), __webpack_require__.e("add-picklist-add-picklist-module")]).then(__webpack_require__.bind(null, /*! ./add-picklist/add-picklist.module */ "./src/app/pages/outbound/pick-list-new/add-picklist/add-picklist.module.ts")).then(m => m.AddPicklistModule),
+        loadChildren: () => Promise.all(/*! import() | add-picklist-add-picklist-module */[__webpack_require__.e("default~add-picklist-add-picklist-module~add-sales-order-add-sales-order-module~generate-generate-mo~7fdd0daa"), __webpack_require__.e("default~add-packing-add-packing-module~add-picklist-add-picklist-module"), __webpack_require__.e("add-picklist-add-picklist-module")]).then(__webpack_require__.bind(null, /*! ./add-picklist/add-picklist.module */ "./src/app/pages/outbound/pick-list-new/add-picklist/add-picklist.module.ts")).then(m => m.AddPicklistModule),
         data: { title: 'edit_pick_list' },
     },
     {

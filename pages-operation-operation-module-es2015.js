@@ -23,7 +23,7 @@ const routes = [
     },
     {
         path: 'add-bin-transfer',
-        loadChildren: () => Promise.all(/*! import() | add-bin-transfer-add-bin-transfer-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("add-bin-transfer-add-bin-transfer-module")]).then(__webpack_require__.bind(null, /*! ./add-bin-transfer/add-bin-transfer.module */ "./src/app/pages/operation/add-bin-transfer/add-bin-transfer.module.ts")).then(m => m.AddBinTransferModule)
+        loadChildren: () => Promise.all(/*! import() | add-bin-transfer-add-bin-transfer-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("add-bin-transfer-add-bin-transfer-module")]).then(__webpack_require__.bind(null, /*! ./add-bin-transfer/add-bin-transfer.module */ "./src/app/pages/operation/add-bin-transfer/add-bin-transfer.module.ts")).then(m => m.AddBinTransferModule)
     },
     {
         path: 'transfer-order',

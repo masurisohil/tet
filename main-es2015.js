@@ -398,18 +398,18 @@ const routes = [
     },
     {
         path: 'company',
-        loadChildren: () => Promise.all(/*! import() | pages-company-company-list-company-list-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~480f1082"), __webpack_require__.e("common"), __webpack_require__.e("pages-company-company-list-company-list-module")]).then(__webpack_require__.bind(null, /*! ./pages/company/company-list/company-list.module */ "./src/app/pages/company/company-list/company-list.module.ts")).then(m => m.CompanyListModule),
+        loadChildren: () => Promise.all(/*! import() | pages-company-company-list-company-list-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("default~packing-packing-module~pages-company-company-list-company-list-module~pages-inbound-inbound-~61f876e0"), __webpack_require__.e("common"), __webpack_require__.e("pages-company-company-list-company-list-module")]).then(__webpack_require__.bind(null, /*! ./pages/company/company-list/company-list.module */ "./src/app/pages/company/company-list/company-list.module.ts")).then(m => m.CompanyListModule),
         canActivate: [_service_guards__WEBPACK_IMPORTED_MODULE_3__["EnsureAuthenticated"], _service_guards__WEBPACK_IMPORTED_MODULE_3__["CompanyRedirectService"]],
         data: { title: 'company_list', module: 'company', action: 'list' },
     },
     {
         path: 'manage',
-        loadChildren: () => Promise.all(/*! import() | pages-master-master-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~480f1082"), __webpack_require__.e("common"), __webpack_require__.e("pages-master-master-module")]).then(__webpack_require__.bind(null, /*! ./pages/master/master.module */ "./src/app/pages/master/master.module.ts")).then(m => m.MasterModule),
+        loadChildren: () => Promise.all(/*! import() | pages-master-master-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("default~packing-packing-module~pages-company-company-list-company-list-module~pages-inbound-inbound-~61f876e0"), __webpack_require__.e("common"), __webpack_require__.e("pages-master-master-module")]).then(__webpack_require__.bind(null, /*! ./pages/master/master.module */ "./src/app/pages/master/master.module.ts")).then(m => m.MasterModule),
         canActivate: [_service_guards__WEBPACK_IMPORTED_MODULE_3__["EnsureAuthenticated"], _service_guards__WEBPACK_IMPORTED_MODULE_3__["IsCompanySelected"]],
     },
     {
         path: 'inbound',
-        loadChildren: () => Promise.all(/*! import() | pages-inbound-inbound-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("default~pages-company-company-list-company-list-module~pages-inbound-inbound-module~pages-master-mas~480f1082"), __webpack_require__.e("default~add-picklist-add-picklist-module~add-sales-order-add-sales-order-module~generate-generate-mo~7fdd0daa"), __webpack_require__.e("common"), __webpack_require__.e("pages-inbound-inbound-module")]).then(__webpack_require__.bind(null, /*! ./pages/inbound/inbound.module */ "./src/app/pages/inbound/inbound.module.ts")).then(m => m.InboundModule),
+        loadChildren: () => Promise.all(/*! import() | pages-inbound-inbound-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~auth-forgot-password-forgot-password-module~auth-lo~cda04ce2"), __webpack_require__.e("default~packing-packing-module~pages-company-company-list-company-list-module~pages-inbound-inbound-~61f876e0"), __webpack_require__.e("default~add-picklist-add-picklist-module~add-sales-order-add-sales-order-module~generate-generate-mo~7fdd0daa"), __webpack_require__.e("common"), __webpack_require__.e("pages-inbound-inbound-module")]).then(__webpack_require__.bind(null, /*! ./pages/inbound/inbound.module */ "./src/app/pages/inbound/inbound.module.ts")).then(m => m.InboundModule),
         canActivate: [_service_guards__WEBPACK_IMPORTED_MODULE_3__["EnsureAuthenticated"], _service_guards__WEBPACK_IMPORTED_MODULE_3__["IsCompanySelected"]],
     },
     {
@@ -2247,7 +2247,7 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     // APIEndpoint: 'http://192.168.1.138:9005/api',
-    APIEndpoint: 'https://79f7bc38d169.ngrok.io/api'
+    APIEndpoint: 'https://cb7b93cd2a34.ngrok.io/api'
 };
 /*
  * For easier debugging in development mode, you can import the following file

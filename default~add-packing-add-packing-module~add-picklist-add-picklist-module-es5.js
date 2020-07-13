@@ -4,24 +4,24 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["auth-forgot-password-forgot-password-module"], {
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["default~add-packing-add-packing-module~add-picklist-add-picklist-module"], {
   /***/
-  "./node_modules/raw-loader/dist/cjs.js!./src/app/auth/forgot-password/forgot-password.component.html":
-  /*!***********************************************************************************************************!*\
-    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/auth/forgot-password/forgot-password.component.html ***!
-    \***********************************************************************************************************/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/common-module/product-list-popup/product-list-popup.component.html":
+  /*!**************************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/common-module/product-list-popup/product-list-popup.component.html ***!
+    \**************************************************************************************************************************/
 
   /*! exports provided: default */
 
   /***/
-  function node_modulesRawLoaderDistCjsJsSrcAppAuthForgotPasswordForgotPasswordComponentHtml(module, __webpack_exports__, __webpack_require__) {
+  function node_modulesRawLoaderDistCjsJsSrcAppCommonModuleProductListPopupProductListPopupComponentHtml(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"container\">\r\n  <div class=\"auth-box private-card\">\r\n    <div class=\"auth-logo\">\r\n      <h1 class=\"text-primary\">WMS</h1>\r\n    </div>\r\n    <div class=\"auth-heading\">\r\n      <h1 class=\"heading\">Reset your password</h1>\r\n      <p>Please enter the email address you'd like your password reset information sent to.</p>\r\n      <div *ngIf=\"formErrors.success\" class=\"alert alert-success alert-dismissible\">\r\n        <a class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n        <span [innerHTML]=\"formErrors.success\"> </span>\r\n      </div>\r\n      <div *ngIf=\"formErrors.error\" class=\"alert alert-danger alert-dismissible\">\r\n        <a class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>\r\n        <span [innerHTML]=\"formErrors.error\"> </span>\r\n      </div>\r\n    </div>\r\n    <form class=\"form-signin\" [formGroup]=\"forgotForm\" (ngSubmit)=\"submitForm()\" >\r\n      <div class=\"form-group field-loginform-email required\">\r\n        <label class=\"control-label\">Email Address</label>\r\n        <input type=\"text\" [formControl]=\"forgotForm.controls['email']\" class=\"form-control input-lg\"\r\n          placeholder=\"Email ID\">\r\n      </div>\r\n      <button type=\"submit\" [ngClass]=\"{'qt-loader qt-loader-mini qt-loader-left': showLoader}\" [disabled]=\"showLoader\"\r\n        class=\"btn btn-primary btn-lg btn-block m-top-24\">Reset Password</button>\r\n      <p class=\"text-muted m-top-24 m-bottom-0 text-center\">Remember Password?<a routerLink=\"/login\"> Log In</a></p>\r\n    </form>\r\n  </div>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div class=\"modal fade\" id=\"productList\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"productListLabel\"\n    aria-hidden=\"true\">\n    <div class=\"modal-dialog\" role=\"document\">\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <h5 class=\"modal-title\" id=\"productListLabel\">Product Lists</h5>\n                <button type=\"button\" (click)=\"close()\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                    <span aria-hidden=\"true\">&times;</span>\n                </button>\n            </div>\n            <div class=\"modal-body\">\n                <div class=\"px-3\">\n                    <div class=\"row border-bottom pb-2\">\n                        <div class=\"col-1\">\n                        </div>\n                        <div class=\"col-2 font-weight-bold\"> Code</div>\n                        <div class=\"col-9 font-weight-bold\">Product Name</div>\n\n                    </div>\n                    <div class=\"row border-bottom py-2\" *ngFor=\"let allProds of ProductList;let i=index;\">\n                        <div class=\"col-1\">\n                            <div class=\"form-check\">\n                                <input id=\"checkBox{{i}}\" (change)=\"addProduct(allProds, $event.target.checked)\"\n                                    type=\"checkbox\" class=\"form-check-input\">\n                            </div>\n                        </div>\n                        <div class=\"col-2 \">{{allProds?.product?.sku_no}}</div>\n                        <div class=\"col-9\">{{allProds?.product?.label}}</div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"modal-footer\">\n                <button (click)=\"close()\" type=\"button\" class=\"btn btn-light\" data-dismiss=\"modal\">Cancel</button>\n                <button type=\"button\" (click)=\"submitData()\" class=\"btn btn-primary\">Add Product</button>\n            </div>\n        </div>\n    </div>\n</div>";
     /***/
   },
 
@@ -46,23 +46,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./src/app/auth/forgot-password/forgot-password.component.ts":
-  /*!*******************************************************************!*\
-    !*** ./src/app/auth/forgot-password/forgot-password.component.ts ***!
-    \*******************************************************************/
+  "./src/app/common-module/product-list-popup/product-list-popup.component.ts":
+  /*!**********************************************************************************!*\
+    !*** ./src/app/common-module/product-list-popup/product-list-popup.component.ts ***!
+    \**********************************************************************************/
 
-  /*! exports provided: ForgotPasswordComponent */
+  /*! exports provided: ProductListPopupComponent */
 
   /***/
-  function srcAppAuthForgotPasswordForgotPasswordComponentTs(module, __webpack_exports__, __webpack_require__) {
+  function srcAppCommonModuleProductListPopupProductListPopupComponentTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "ForgotPasswordComponent", function () {
-      return ForgotPasswordComponent;
+    __webpack_require__.d(__webpack_exports__, "ProductListPopupComponent", function () {
+      return ProductListPopupComponent;
     });
     /* harmony import */
 
@@ -76,151 +76,89 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-    /* harmony import */
 
-
-    var src_app_service_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! src/app/service/config.service */
-    "./src/app/service/config.service.ts");
-    /* harmony import */
-
-
-    var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! @angular/forms */
-    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
-    /* harmony import */
-
-
-    var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-    /* harmony import */
-
-
-    var src_app_service_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! src/app/service/auth.service */
-    "./src/app/service/auth.service.ts");
-    /* harmony import */
-
-
-    var src_app_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-    /*! src/app/common */
-    "./src/app/common.ts");
-    /* harmony import */
-
-
-    var src_app_service_data_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-    /*! src/app/service/data.service */
-    "./src/app/service/data.service.ts");
-
-    var ForgotPasswordComponent =
+    var ProductListPopupComponent =
     /*#__PURE__*/
     function () {
-      function ForgotPasswordComponent(router, authService, fBuilder, config, dataService) {
-        var _this = this;
+      function ProductListPopupComponent() {
+        _classCallCheck(this, ProductListPopupComponent);
 
-        _classCallCheck(this, ForgotPasswordComponent);
-
-        this.router = router;
-        this.authService = authService;
-        this.fBuilder = fBuilder;
-        this.config = config;
-        this.dataService = dataService;
-        this.formErrors = {
-          error: null,
-          success: null
-        };
-        this.showLoader = false;
-        this.currentCompany = null;
-        this.config.config = {
-          showHeader: false
-        };
-        this.forgotForm = this.fBuilder.group({
-          email: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, src_app_common__WEBPACK_IMPORTED_MODULE_6__["validateEmailFormControl"]])]
-        });
-        this.dataService.currentCompany.subscribe(function (response) {
-          _this.currentCompany = response;
-        });
+        this.ProductItem = [];
+        this.ProductList = [];
+        this.onProductSubmit = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.onRelodeEvent = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
       }
 
-      _createClass(ForgotPasswordComponent, [{
+      _createClass(ProductListPopupComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {}
       }, {
-        key: "submitForm",
-        value: function submitForm() {
-          var _this2 = this;
+        key: "addObject",
+        value: function addObject() {
+          $('#productList').modal('show');
+        }
+      }, {
+        key: "close",
+        value: function close() {
+          $('#productList').modal('hide');
+        }
+      }, {
+        key: "addProduct",
+        value: function addProduct(obj, checked) {
+          if (checked) {
+            this.ProductItem.push(obj);
 
-          if (this.forgotForm.valid) {
-            this.showLoader = true;
-            var formData = {
-              email: this.forgotForm.value.email,
-              company_id: this.currentCompany ? this.currentCompany.company_id : null
-            };
-            this.authService.forgotPassword(formData).subscribe(function (response) {
-              _this2.showLoader = false;
-
-              if (response.success) {
-                _this2.formErrors.success = "* ".concat(response.data.message);
-                src_app_common__WEBPACK_IMPORTED_MODULE_6__["CommonFunction"].resetForm(_this2.forgotForm);
-                setTimeout(function () {
-                  _this2.router.navigateByUrl('/login');
-                }, 3000);
-              } else {
-                _this2.formErrors.error = "* ".concat(response.error);
-              }
-            }, function (error) {
-              _this2.formErrors.error = "* ".concat(error.error);
-              _this2.showLoader = false;
+            if (this.ProductItem.length === this.ProductItem.length) {
+              $('#checkBoxAll').prop('checked', true);
+            }
+          } else {
+            $('#checkBoxAll').prop('checked', false);
+            this.ProductItem = this.ProductItem.filter(function (object) {
+              return String(object.product.value) !== String(obj.product.value);
             });
           }
         }
+      }, {
+        key: "submitData",
+        value: function submitData() {
+          this.onProductSubmit.emit(this.ProductItem);
+          $('#productList').modal('hide');
+        }
       }]);
 
-      return ForgotPasswordComponent;
+      return ProductListPopupComponent;
     }();
 
-    ForgotPasswordComponent.ctorParameters = function () {
-      return [{
-        type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
-      }, {
-        type: src_app_service_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"]
-      }, {
-        type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"]
-      }, {
-        type: src_app_service_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"]
-      }, {
-        type: src_app_service_data_service__WEBPACK_IMPORTED_MODULE_7__["DataService"]
-      }];
-    };
-
-    ForgotPasswordComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-      selector: 'app-forgot-password',
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], ProductListPopupComponent.prototype, "ProductList", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()], ProductListPopupComponent.prototype, "onProductSubmit", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()], ProductListPopupComponent.prototype, "onRelodeEvent", void 0);
+    ProductListPopupComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-product-list-popup',
       template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
-      /*! raw-loader!./forgot-password.component.html */
-      "./node_modules/raw-loader/dist/cjs.js!./src/app/auth/forgot-password/forgot-password.component.html")).default
-    })], ForgotPasswordComponent);
+      /*! raw-loader!./product-list-popup.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/common-module/product-list-popup/product-list-popup.component.html")).default
+    })], ProductListPopupComponent);
     /***/
   },
 
   /***/
-  "./src/app/auth/forgot-password/forgot-password.module.ts":
-  /*!****************************************************************!*\
-    !*** ./src/app/auth/forgot-password/forgot-password.module.ts ***!
-    \****************************************************************/
+  "./src/app/common-module/product-list-popup/product-list-popup.module.ts":
+  /*!*******************************************************************************!*\
+    !*** ./src/app/common-module/product-list-popup/product-list-popup.module.ts ***!
+    \*******************************************************************************/
 
-  /*! exports provided: ForgotPasswordModule */
+  /*! exports provided: ProductListPopupModule */
 
   /***/
-  function srcAppAuthForgotPasswordForgotPasswordModuleTs(module, __webpack_exports__, __webpack_require__) {
+  function srcAppCommonModuleProductListPopupProductListPopupModuleTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "ForgotPasswordModule", function () {
-      return ForgotPasswordModule;
+    __webpack_require__.d(__webpack_exports__, "ProductListPopupModule", function () {
+      return ProductListPopupModule;
     });
     /* harmony import */
 
@@ -243,51 +181,153 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-    /* harmony import */
+    var _product_list_popup_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ./product-list-popup.component */
+    "./src/app/common-module/product-list-popup/product-list-popup.component.ts");
 
-
-    var _forgot_password_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! ./forgot-password.component */
-    "./src/app/auth/forgot-password/forgot-password.component.ts");
-    /* harmony import */
-
-
-    var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! @angular/forms */
-    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
-    /* harmony import */
-
-
-    var src_app_service_auth_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-    /*! src/app/service/auth.service */
-    "./src/app/service/auth.service.ts");
-    /* harmony import */
-
-
-    var src_app_shared_form_validation_form_validation_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-    /*! src/app/shared/form-validation/form-validation.module */
-    "./src/app/shared/form-validation/form-validation.module.ts");
-
-    var routes = [{
-      path: '',
-      component: _forgot_password_component__WEBPACK_IMPORTED_MODULE_4__["ForgotPasswordComponent"],
-      data: {
-        title: 'forgot_password'
-      }
-    }];
-
-    var ForgotPasswordModule = function ForgotPasswordModule() {
-      _classCallCheck(this, ForgotPasswordModule);
+    var ProductListPopupModule = function ProductListPopupModule() {
+      _classCallCheck(this, ProductListPopupModule);
     };
 
-    ForgotPasswordModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-      declarations: [_forgot_password_component__WEBPACK_IMPORTED_MODULE_4__["ForgotPasswordComponent"]],
-      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_5__["ReactiveFormsModule"], src_app_shared_form_validation_form_validation_module__WEBPACK_IMPORTED_MODULE_7__["FormValidationModule"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(routes)],
-      providers: [src_app_service_auth_service__WEBPACK_IMPORTED_MODULE_6__["AuthService"]]
-    })], ForgotPasswordModule);
+    ProductListPopupModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+      declarations: [_product_list_popup_component__WEBPACK_IMPORTED_MODULE_3__["ProductListPopupComponent"]],
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]],
+      exports: [_product_list_popup_component__WEBPACK_IMPORTED_MODULE_3__["ProductListPopupComponent"]]
+    })], ProductListPopupModule);
+    /***/
+  },
+
+  /***/
+  "./src/app/shared/directive/number.directive.ts":
+  /*!******************************************************!*\
+    !*** ./src/app/shared/directive/number.directive.ts ***!
+    \******************************************************/
+
+  /*! exports provided: NumberDirective, FloatNumberDirective */
+
+  /***/
+  function srcAppSharedDirectiveNumberDirectiveTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "NumberDirective", function () {
+      return NumberDirective;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FloatNumberDirective", function () {
+      return FloatNumberDirective;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+    var NumberDirective =
+    /*#__PURE__*/
+    function () {
+      function NumberDirective(_el) {
+        _classCallCheck(this, NumberDirective);
+
+        this._el = _el;
+      }
+
+      _createClass(NumberDirective, [{
+        key: "onKeyDown",
+        value: function onKeyDown(event) {
+          var e = event;
+
+          if ([46, 8, 9, 27, 13].indexOf(e.keyCode) !== -1 || // Allow: Ctrl+A
+          e.keyCode === 65 && (e.ctrlKey || e.metaKey) || // Allow: Ctrl+C
+          // (e.keyCode === 67 && (e.ctrlKey || e.metaKey)) ||
+          // Allow: Ctrl+V
+          // (e.keyCode === 86 && (e.ctrlKey || e.metaKey)) ||
+          // Allow: Ctrl+X
+          e.keyCode === 88 && (e.ctrlKey || e.metaKey) || // Allow: home, end, left, right
+          e.keyCode >= 35 && e.keyCode <= 39) {
+            // let it happen, don't do anything
+            return;
+          } // Ensure that it is a number and stop the keypress
+
+
+          if ((e.shiftKey || e.keyCode < 48 || e.keyCode > 57) && (e.keyCode < 96 || e.keyCode > 105 || e.keyCode === 110 || e.keyCode === 190)) {
+            e.preventDefault();
+          }
+        }
+      }]);
+
+      return NumberDirective;
+    }();
+
+    NumberDirective.ctorParameters = function () {
+      return [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]
+      }];
+    };
+
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('keydown', ['$event'])], NumberDirective.prototype, "onKeyDown", null);
+    NumberDirective = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
+      selector: '[number]'
+    })], NumberDirective);
+
+    var FloatNumberDirective =
+    /*#__PURE__*/
+    function () {
+      function FloatNumberDirective(_el) {
+        _classCallCheck(this, FloatNumberDirective);
+
+        this._el = _el;
+      }
+
+      _createClass(FloatNumberDirective, [{
+        key: "onKeyDown",
+        value: function onKeyDown(event) {
+          var e = event;
+
+          if ([46, 8, 9, 27, 13, 110, 190].indexOf(e.keyCode) !== -1 || // Allow: Ctrl+A
+          e.keyCode === 65 && (e.ctrlKey || e.metaKey) || // Allow: Ctrl+C
+          // (e.keyCode === 67 && (e.ctrlKey || e.metaKey)) ||
+          // Allow: Ctrl+V
+          // (e.keyCode === 86 && (e.ctrlKey || e.metaKey)) ||
+          // Allow: Ctrl+X
+          e.keyCode === 88 && (e.ctrlKey || e.metaKey) || // Allow: home, end, left, right
+          e.keyCode >= 35 && e.keyCode <= 39) {
+            // let it happen, don't do anything
+            return;
+          } // Ensure that it is a number and stop the keypress
+
+
+          if ((e.shiftKey || e.keyCode < 48 || e.keyCode > 57) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+          }
+        }
+      }]);
+
+      return FloatNumberDirective;
+    }();
+
+    FloatNumberDirective.ctorParameters = function () {
+      return [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]
+      }];
+    };
+
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"])('keydown', ['$event'])], FloatNumberDirective.prototype, "onKeyDown", null);
+    FloatNumberDirective = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
+      selector: '[floatNumber]'
+    })], FloatNumberDirective);
     /***/
   },
 
@@ -503,24 +543,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(ControlErrorsDirective, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this3 = this;
+          var _this = this;
 
           if (this.control && this.control.valueChanges) {
             Object(rxjs__WEBPACK_IMPORTED_MODULE_6__["merge"])(this.control.valueChanges, this.submit$).subscribe(function (v) {
-              var controlErrors = _this3.control.errors;
+              var controlErrors = _this.control.errors;
 
               if (controlErrors) {
-                var control_name = _this3.getFormControlName(_this3.control); // console.log(control_name, controlErrors);
+                var control_name = _this.getFormControlName(_this.control); // console.log(control_name, controlErrors);
 
 
                 var firstKey = Object.keys(controlErrors)[0];
                 var messages = _form_errors__WEBPACK_IMPORTED_MODULE_7__["VALIDATION_MESSAGES"][control_name];
 
                 if (messages !== undefined && messages !== null && messages !== '') {
-                  _this3.setError(messages[firstKey]);
+                  _this.setError(messages[firstKey]);
                 }
-              } else if (_this3.ref) {
-                _this3.setError(null);
+              } else if (_this.ref) {
+                _this.setError(null);
               }
             });
           }
@@ -633,14 +673,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*#__PURE__*/
     function () {
       function FormSubmitDirective(host) {
-        var _this4 = this;
+        var _this2 = this;
 
         _classCallCheck(this, FormSubmitDirective);
 
         this.host = host;
         this.submit$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["fromEvent"])(this.element, 'submit').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function () {
-          if (_this4.element.classList.contains('submitted') === false) {
-            _this4.element.classList.add('submitted');
+          if (_this2.element.classList.contains('submitted') === false) {
+            _this2.element.classList.add('submitted');
           }
         }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["shareReplay"])(1));
       }
@@ -811,6 +851,231 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       entryComponents: [_control_error_control_error_component__WEBPACK_IMPORTED_MODULE_6__["ControlErrorComponent"]]
     })], FormValidationModule);
     /***/
+  },
+
+  /***/
+  "./src/app/shared/pipe/status.pipe.ts":
+  /*!********************************************!*\
+    !*** ./src/app/shared/pipe/status.pipe.ts ***!
+    \********************************************/
+
+  /*! exports provided: TransactionStatusPipe, PricePipe, TransactionIconsPipe */
+
+  /***/
+  function srcAppSharedPipeStatusPipeTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "TransactionStatusPipe", function () {
+      return TransactionStatusPipe;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "PricePipe", function () {
+      return PricePipe;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "TransactionIconsPipe", function () {
+      return TransactionIconsPipe;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+    var TransactionStatusPipe =
+    /*#__PURE__*/
+    function () {
+      function TransactionStatusPipe() {
+        _classCallCheck(this, TransactionStatusPipe);
+      }
+
+      _createClass(TransactionStatusPipe, [{
+        key: "transform",
+        value: function transform(value, args) {
+          var text = null;
+
+          if (value) {
+            switch (value.value) {
+              case 1:
+                text = "<small class=\"badge badge-pill badge-default\">".concat(value.label, "</small>");
+                break;
+
+              case 2:
+                text = "<small class=\"badge badge-pill badge-primary\">".concat(value.label, "</small>");
+                break;
+
+              case 3:
+                text = "<small class=\"badge badge-pill badge-success\">".concat(value.label, "</small>");
+                break;
+
+              case 4:
+                text = "<small class=\"badge badge-pill badge-danger\">".concat(value.label, "</small>");
+                break;
+
+              default:
+                text = null;
+                break;
+            }
+
+            return text;
+          }
+        }
+      }]);
+
+      return TransactionStatusPipe;
+    }();
+
+    TransactionStatusPipe = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+      name: 'transactionStatus'
+    })], TransactionStatusPipe);
+
+    var PricePipe =
+    /*#__PURE__*/
+    function () {
+      function PricePipe() {
+        _classCallCheck(this, PricePipe);
+      }
+
+      _createClass(PricePipe, [{
+        key: "transform",
+        value: function transform(value, args) {
+          return value ? parseFloat(value).toLocaleString(undefined, {
+            minimumFractionDigits: 2
+          }) : '00'; // return parseFloat(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+      }]);
+
+      return PricePipe;
+    }();
+
+    PricePipe = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+      name: 'price'
+    })], PricePipe);
+
+    var TransactionIconsPipe =
+    /*#__PURE__*/
+    function () {
+      function TransactionIconsPipe() {
+        _classCallCheck(this, TransactionIconsPipe);
+      }
+
+      _createClass(TransactionIconsPipe, [{
+        key: "transform",
+        value: function transform(value, args) {
+          var text = null;
+
+          if (value) {
+            switch (value.value) {
+              case 1:
+                text = '<span class="la la-check-circle text-success"> </span>';
+                break;
+
+              case 2:
+                text = '<span class="la la-times-circle text-danger"> </span>';
+                break;
+
+              case 3:
+                text = '<span class="la la-check-circle text-success"> </span>';
+                break;
+
+              case 4:
+                text = '<span class="la la-times-circle text-danger"> </span>';
+                break;
+
+              default:
+                text = null;
+                break;
+            }
+
+            return text;
+          }
+        }
+      }]);
+
+      return TransactionIconsPipe;
+    }();
+
+    TransactionIconsPipe = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+      name: 'transactionIcons'
+    })], TransactionIconsPipe);
+    /***/
+  },
+
+  /***/
+  "./src/app/shared/shared.module.ts":
+  /*!*****************************************!*\
+    !*** ./src/app/shared/shared.module.ts ***!
+    \*****************************************/
+
+  /*! exports provided: SharedModule */
+
+  /***/
+  function srcAppSharedSharedModuleTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "SharedModule", function () {
+      return SharedModule;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    /* harmony import */
+
+
+    var _directive_number_directive__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ./directive/number.directive */
+    "./src/app/shared/directive/number.directive.ts");
+    /* harmony import */
+
+
+    var _pipe_status_pipe__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ./pipe/status.pipe */
+    "./src/app/shared/pipe/status.pipe.ts");
+
+    var SharedModule = function SharedModule() {
+      _classCallCheck(this, SharedModule);
+    };
+
+    SharedModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+      declarations: [_directive_number_directive__WEBPACK_IMPORTED_MODULE_3__["NumberDirective"], _directive_number_directive__WEBPACK_IMPORTED_MODULE_3__["FloatNumberDirective"], _pipe_status_pipe__WEBPACK_IMPORTED_MODULE_4__["PricePipe"], _pipe_status_pipe__WEBPACK_IMPORTED_MODULE_4__["TransactionStatusPipe"], _pipe_status_pipe__WEBPACK_IMPORTED_MODULE_4__["TransactionIconsPipe"]],
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]],
+      exports: [_directive_number_directive__WEBPACK_IMPORTED_MODULE_3__["NumberDirective"], _pipe_status_pipe__WEBPACK_IMPORTED_MODULE_4__["PricePipe"], _pipe_status_pipe__WEBPACK_IMPORTED_MODULE_4__["TransactionStatusPipe"], _pipe_status_pipe__WEBPACK_IMPORTED_MODULE_4__["TransactionIconsPipe"], _directive_number_directive__WEBPACK_IMPORTED_MODULE_3__["FloatNumberDirective"]]
+    })], SharedModule);
+    /***/
   }
 }]);
-//# sourceMappingURL=auth-forgot-password-forgot-password-module-es5.js.map
+//# sourceMappingURL=default~add-packing-add-packing-module~add-picklist-add-picklist-module-es5.js.map

@@ -119,15 +119,15 @@ const routes = [
     },
     {
         path: 'registeration',
-        loadChildren: () => Promise.all(/*! import() | registeration-registeration-module */[__webpack_require__.e("common"), __webpack_require__.e("registeration-registeration-module")]).then(__webpack_require__.bind(null, /*! ./registeration/registeration.module */ "./src/app/pages/inbound/registeration/registeration.module.ts")).then(m => m.RegisterationModule)
+        loadChildren: () => __webpack_require__.e(/*! import() | registeration-registeration-module */ "registeration-registeration-module").then(__webpack_require__.bind(null, /*! ./registeration/registeration.module */ "./src/app/pages/inbound/registeration/registeration.module.ts")).then(m => m.RegisterationModule)
     },
     {
         path: 'product-config',
-        loadChildren: () => Promise.all(/*! import() | product-config-product-config-list-product-config-list-module */[__webpack_require__.e("common"), __webpack_require__.e("product-config-product-config-list-product-config-list-module")]).then(__webpack_require__.bind(null, /*! ./product-config/product-config-list/product-config-list.module */ "./src/app/pages/inbound/product-config/product-config-list/product-config-list.module.ts")).then(m => m.ProductConfigListModule)
+        loadChildren: () => __webpack_require__.e(/*! import() | product-config-product-config-list-product-config-list-module */ "product-config-product-config-list-product-config-list-module").then(__webpack_require__.bind(null, /*! ./product-config/product-config-list/product-config-list.module */ "./src/app/pages/inbound/product-config/product-config-list/product-config-list.module.ts")).then(m => m.ProductConfigListModule)
     },
     {
         path: 'put-away',
-        loadChildren: () => Promise.all(/*! import() | put-away-put-away-module */[__webpack_require__.e("common"), __webpack_require__.e("put-away-put-away-module")]).then(__webpack_require__.bind(null, /*! ./put-away/put-away.module */ "./src/app/pages/inbound/put-away/put-away.module.ts")).then(m => m.PutAwayModule)
+        loadChildren: () => __webpack_require__.e(/*! import() | put-away-put-away-module */ "put-away-put-away-module").then(__webpack_require__.bind(null, /*! ./put-away/put-away.module */ "./src/app/pages/inbound/put-away/put-away.module.ts")).then(m => m.PutAwayModule)
     }
 ];
 let InboundRoutingModule = class InboundRoutingModule {
@@ -210,12 +210,12 @@ const routes = [
     },
     {
         path: 'add',
-        loadChildren: () => Promise.all(/*! import() | add-order-add-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null, /*! ./add-order/add-order.module */ "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(m => m.AddOrderModule),
+        loadChildren: () => Promise.all(/*! import() | add-order-add-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null, /*! ./add-order/add-order.module */ "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(m => m.AddOrderModule),
         data: { title: 'add_order' },
     },
     {
         path: 'edit/:id',
-        loadChildren: () => Promise.all(/*! import() | add-order-add-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null, /*! ./add-order/add-order.module */ "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(m => m.AddOrderModule),
+        loadChildren: () => Promise.all(/*! import() | add-order-add-order-module */[__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null, /*! ./add-order/add-order.module */ "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(m => m.AddOrderModule),
         data: { title: 'edit_order' },
     },
     {
@@ -1268,7 +1268,7 @@ const routes = [
     },
     {
         path: 'generate-unloading',
-        loadChildren: () => Promise.all(/*! import() | generate-unloading-generate-unloading-module */[__webpack_require__.e("common"), __webpack_require__.e("generate-unloading-generate-unloading-module")]).then(__webpack_require__.bind(null, /*! ./generate-unloading/generate-unloading.module */ "./src/app/pages/inbound/unload/generate-unloading/generate-unloading.module.ts")).then(m => m.GenerateUnloadingModule),
+        loadChildren: () => __webpack_require__.e(/*! import() | generate-unloading-generate-unloading-module */ "generate-unloading-generate-unloading-module").then(__webpack_require__.bind(null, /*! ./generate-unloading/generate-unloading.module */ "./src/app/pages/inbound/unload/generate-unloading/generate-unloading.module.ts")).then(m => m.GenerateUnloadingModule),
         data: { title: 'add_unload' },
     },
 ];

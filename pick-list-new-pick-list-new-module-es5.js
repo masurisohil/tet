@@ -176,7 +176,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var params = {
             page: this.currentPage
           };
-          console.log(this.status_id);
 
           if (this.status_id) {
             params.status_id = this.status_id;
@@ -346,7 +345,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-picklist-add-picklist-module */
-        [__webpack_require__.e("default~add-picklist-add-picklist-module~add-sales-order-add-sales-order-module~generate-generate-mo~7fdd0daa"), __webpack_require__.e("common"), __webpack_require__.e("add-picklist-add-picklist-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-picklist-add-picklist-module~add-sales-order-add-sales-order-module~generate-generate-mo~7fdd0daa"), __webpack_require__.e("default~add-packing-add-packing-module~add-picklist-add-picklist-module"), __webpack_require__.e("add-picklist-add-picklist-module")]).then(__webpack_require__.bind(null,
         /*! ./add-picklist/add-picklist.module */
         "./src/app/pages/outbound/pick-list-new/add-picklist/add-picklist.module.ts")).then(function (m) {
           return m.AddPicklistModule;
@@ -360,7 +359,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-picklist-add-picklist-module */
-        [__webpack_require__.e("default~add-picklist-add-picklist-module~add-sales-order-add-sales-order-module~generate-generate-mo~7fdd0daa"), __webpack_require__.e("common"), __webpack_require__.e("add-picklist-add-picklist-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-picklist-add-picklist-module~add-sales-order-add-sales-order-module~generate-generate-mo~7fdd0daa"), __webpack_require__.e("default~add-packing-add-packing-module~add-picklist-add-picklist-module"), __webpack_require__.e("add-picklist-add-picklist-module")]).then(__webpack_require__.bind(null,
         /*! ./add-picklist/add-picklist.module */
         "./src/app/pages/outbound/pick-list-new/add-picklist/add-picklist.module.ts")).then(function (m) {
           return m.AddPicklistModule;

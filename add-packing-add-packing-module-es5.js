@@ -21,7 +21,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"container-fluid\">\r\n    <div class=\"page-header\">\r\n        <div class=\"row\">\r\n            <div class=\"col d-flex\">\r\n                <h2 class=\"mr-auto\">Add Packing </h2>\r\n\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"card\">\r\n        <div class=\"card-body\">\r\n            <div class=\"mb-3\">\r\n                <div class=\"col-12\">\r\n                    <div class=\"form-group row align-items-center\">\r\n                        <label class=\"control-label text-md-right col-md-4 col-lg-3\">Select Order Number</label>\r\n                        <ng-select style=\"width: 180px;\" placeholder=\"Select Order Number\" [items]=\"orderNumber\"\r\n                            bindLabel=\"number\">\r\n                        </ng-select>\r\n\r\n\r\n                    </div>\r\n                    <div class=\"form-group row align-items-center\">\r\n                        <label class=\"control-label text-md-right col-md-4 col-lg-3\">Packing Type</label>\r\n                        <ng-select style=\"width: 180px;\" placeholder=\"Select Packing Type\" [items]=\"packType\"\r\n                            bindLabel=\"type\" class=\"\">\r\n                        </ng-select>\r\n                    </div>\r\n                    <div class=\"form-group row align-items-center\">\r\n                        <label class=\"control-label text-md-right col-md-4 col-lg-3\">Add Products</label>\r\n                        <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\">\r\n                            Add\r\n                        </button>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"row mt-4\">\r\n                <div class=\"col-12\">\r\n                    <div class=\"border p-2\">\r\n                        <div class=\"row\">\r\n                            <div class=\"col-6\">\r\n                                <h6>John Doe</h6>\r\n                            </div>\r\n                            <div class=\"col-6 text-right\">\r\n                                <div>Pallet Number: 78959197880000709972</div>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"row mt-2\">\r\n                            <div class=\"col-md-6\">\r\n                                <p class=\"mb-1\">Order No. <span>11722</span></p>\r\n                                <p class=\"mb-1\">Item No. <span>11722</span></p>\r\n                                <p class=\"mb-1\">Description. <span>11722</span></p>\r\n                            </div>\r\n                            <div class=\"col-md-6 text-right\">\r\n                                <div class=\"w-25 ml-auto\">\r\n                                    Akshya Nagar 1st Block 1st Cross,\r\n                                    Rammurthy nagar,\r\n                                    Bangalore-560016\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <div class=\"mt-2\">\r\n                        <div class=\"table-responsive\">\r\n                            <table class=\"table\">\r\n                                <thead class=\"thead-dark\">\r\n                                    <tr>\r\n                                        <th width=\"10%\">No.</th>\r\n                                        <th width=\"15%\">Product Code</th>\r\n                                        <th width=\"65%\">Product Details</th>\r\n                                        <th width=\"10%\">Product Total</th>\r\n\r\n                                    </tr>\r\n\r\n                                </thead>\r\n                                <tbody>\r\n                                    <tr *ngFor=\"let prodLists of productList; let i =index\">\r\n                                        <td>{{i + 1}}</td>\r\n                                        <td>{{prodLists.prodCode}}</td>\r\n                                        <td>{{prodLists.prodDet}}</td>\r\n                                        <td class=\"text-center\">{{prodLists.prodTotal}}</td>\r\n                                    </tr>\r\n\r\n\r\n\r\n                                </tbody>\r\n                            </table>\r\n                        </div>\r\n                    </div>\r\n\r\n                </div>\r\n            </div>\r\n\r\n\r\n\r\n        </div>\r\n        <div class=\"text-right border-top py-4 card-footer\">\r\n            <a href=\"/outbound/packing\" class=\"btn btn-light\">Cancel</a>\r\n            <button type=\"submit\" class=\"btn btn-secondary ml-2\">Done</button></div>\r\n    </div>\r\n</div>\r\n\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"\r\n    aria-hidden=\"true\">\r\n    <div class=\"modal-dialog\" role=\"document\">\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h5 class=\"modal-title\" id=\"exampleModalLabel\">Product Lists</h5>\r\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n                    <span aria-hidden=\"true\">&times;</span>\r\n                </button>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <div class=\"px-3\">\r\n                    <div class=\"row border-bottom pb-2\">\r\n                        <div class=\"col-1\">\r\n                        </div>\r\n                        <div class=\"col-2 font-weight-bold\"> Code</div>\r\n                        <div class=\"col-9 font-weight-bold\">Product Name</div>\r\n\r\n                    </div>\r\n                    <div class=\"row border-bottom py-2\" *ngFor=\"let allProds of allProducts\">\r\n                        <div class=\"col-1\">\r\n                            <div class=\"form-check\">\r\n                                <input type=\"checkbox\" class=\"form-check-input\" id=\"exampleCheck1\">\r\n\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"col-2\">{{allProds.prodCode}}</div>\r\n                        <div class=\"col-9\">{{allProds.prodName}}</div>\r\n\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-light\" data-dismiss=\"modal\">Cancel</button>\r\n                <button type=\"button\" class=\"btn btn-primary\">Add Product</button>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
+    __webpack_exports__["default"] = "<div class=\"container-fluid\">\r\n    <div class=\"page-header\">\r\n        <div class=\"row\">\r\n            <div class=\"col d-flex\">\r\n                <h2 class=\"mr-auto\">Add Packing </h2>\r\n\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"card\">\r\n        <form [formGroup]=\"addForm\" (ngSubmit)=\"submitForm(addForm)\" role=\"form\">\r\n            <div class=\"card-body\">\r\n                <div class=\"mb-3\">\r\n                    <div class=\"col-12\">\r\n                        <div class=\"form-group row align-items-center\" [ngClass]=\"{'has-error': formErrors.order_id}\">\r\n                            <label class=\"control-label text-md-right col-md-4 col-lg-3\">Select Order Number</label>\r\n\r\n                            <ng-select style=\"width:180px\" [formControl]=\"addForm.controls['sales_order_id']\"\r\n                                [items]=\"orderNumberArray\" (change)=\"onOrderChange($event)\" bindLabel=\"label\"\r\n                                bindValue=\"value\" placeholder=\"Select Order\">\r\n                            </ng-select>\r\n                            <span *ngIf=\"formErrors.order_id\" class=\"help-block\"\r\n                                [innerHTML]=\"formErrors.order_id\"></span>\r\n                        </div>\r\n                        <div class=\"form-group row align-items-center\">\r\n                            <label class=\"control-label text-md-right col-md-4 col-lg-3\">Packing Type</label>\r\n                            <ng-select style=\"width: 180px;\" [formControl]=\"addForm.controls['pack_type']\"\r\n                                placeholder=\"Select Packing Type\" [items]=\"packTypeArray\" bindLabel=\"label\"\r\n                                bindValue=\"value\">\r\n                            </ng-select>\r\n                        </div>\r\n                        <div class=\"form-group row align-items-center\">\r\n                            <label class=\"control-label text-md-right col-md-4 col-lg-3\">Add Products</label>\r\n                            <button type=\"button\" class=\"btn btn-primary\" (click)=\"addProduct()\">\r\n                                Add\r\n                            </button>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"row mt-4\">\r\n                    <div class=\"col-12\">\r\n                        <div class=\"border p-2\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-6\">\r\n                                    <h6>John Doe</h6>\r\n                                </div>\r\n                                <div class=\"col-6 text-right\">\r\n                                    <div>Pallet Number: 78959197880000709972</div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"row mt-2\">\r\n                                <div class=\"col-md-6\">\r\n                                    <p class=\"mb-1\">Order No. <span>11722</span></p>\r\n                                    <p class=\"mb-1\">Item No. <span>11722</span></p>\r\n                                    <p class=\"mb-1\">Description. <span>11722</span></p>\r\n                                </div>\r\n                                <div class=\"col-md-6 text-right\">\r\n                                    <div class=\"w-25 ml-auto\">\r\n                                        Akshya Nagar 1st Block 1st Cross,\r\n                                        Rammurthy nagar,\r\n                                        Bangalore-560016\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n\r\n                        </div>\r\n                        <div class=\"mt-2\">\r\n                            <div class=\"table-responsive\">\r\n                                <table class=\"table\">\r\n                                    <thead class=\"thead-dark\">\r\n                                        <tr>\r\n                                            <th width=\"10%\">No.</th>\r\n                                            <th width=\"15%\">Product Code</th>\r\n                                            <th width=\"65%\">Product Details</th>\r\n                                            <th width=\"10%\">Product Total</th>\r\n\r\n                                        </tr>\r\n\r\n                                    </thead>\r\n                                    <tbody>\r\n                                        <tr *ngFor=\"let prodLists of productDetailList; let i =index\">\r\n                                            <td>{{i + 1}}</td>\r\n                                            <td>{{prodLists.prodCode}}</td>\r\n                                            <td>{{prodLists.prodDet}}</td>\r\n                                            <td class=\"text-center\">{{prodLists.prodTotal}}</td>\r\n                                        </tr>\r\n\r\n\r\n\r\n                                    </tbody>\r\n                                </table>\r\n                            </div>\r\n                        </div>\r\n\r\n                    </div>\r\n                </div>\r\n\r\n\r\n\r\n            </div>\r\n            <div class=\"text-right border-top py-4 card-footer\">\r\n                <a href=\"/outbound/packing\" class=\"btn btn-light\">Cancel</a>\r\n                <button type=\"submit\" class=\"btn btn-secondary ml-2\">Done</button></div>\r\n        </form>\r\n    </div>\r\n\r\n</div>\r\n<app-product-list-popup [ProductList]=\"orderDetails?.product_list\" (onProductSubmit)=\"onProductSubmit($event)\">\r\n</app-product-list-popup>";
     /***/
   },
 
@@ -56,93 +56,222 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var src_app_common_module_product_list_popup_product_list_popup_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! src/app/common-module/product-list-popup/product-list-popup.component */
+    "./src/app/common-module/product-list-popup/product-list-popup.component.ts");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    /* harmony import */
+
+
+    var src_app_service_packing_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! src/app/service/packing.service */
+    "./src/app/service/packing.service.ts");
 
     var AddPackingComponent =
     /*#__PURE__*/
     function () {
-      function AddPackingComponent() {
+      function AddPackingComponent(packingService, activatedRoute, fb, router) {
         _classCallCheck(this, AddPackingComponent);
 
-        this.orderNumber = [{
-          id: 1,
-          number: '00515'
-        }, {
-          id: 2,
-          number: '00522'
-        }, {
-          id: 3,
-          number: '00523'
-        }, {
-          id: 4,
-          number: '00524'
-        }, {
-          id: 5,
-          number: '00525'
-        }];
-        this.packType = [{
-          id: 1,
-          type: 'PCS'
-        }, {
-          id: 2,
-          type: 'BOX'
-        }];
-        this.productList = [{
-          id: 1,
-          prodCode: '05284',
-          prodDet: 'ddsf 45454 ddf',
-          prodTotal: '1'
-        }, {
-          id: 2,
-          prodCode: '05285',
-          prodDet: 'ddsf 45454 ddf',
-          prodTotal: '2'
-        }, {
-          id: 3,
-          prodCode: '05286',
-          prodDet: 'ddsf 45454 ddf',
-          prodTotal: '4'
-        }, {
-          id: 4,
-          prodCode: '05287',
-          prodDet: 'ddsf 45454 ddf',
-          prodTotal: '1'
-        }, {
-          id: 5,
-          prodCode: '05288',
-          prodDet: 'ddsf 45454 ddf',
-          prodTotal: '1'
-        }];
-        this.allProducts = [{
-          id: 1,
-          prodCode: '05284',
-          prodName: 'Product name 1'
-        }, {
-          id: 2,
-          prodCode: '05284',
-          prodName: 'Product name 2'
-        }, {
-          id: 3,
-          prodCode: '05284',
-          prodName: 'Product name 3'
-        }, {
-          id: 4,
-          prodCode: '05284',
-          prodName: 'Product name 4'
-        }, {
-          id: 5,
-          prodCode: '05284',
-          prodName: 'Product name 5'
-        }];
+        this.packingService = packingService;
+        this.activatedRoute = activatedRoute;
+        this.fb = fb;
+        this.router = router;
+        this.orderNumberArray = [];
+        this.packTypeArray = [];
+        this.loadingState = false;
+        this.showLoader = false;
+        this.formErrors = {
+          apierror: null,
+          order_id: null,
+          product: null
+        };
+        this.isEditing = false;
+        this.editId = null;
+        this.productDetailList = [];
+
+        if (this.activatedRoute.snapshot.paramMap.get('id')) {
+          this.isEditing = true;
+          this.editId = this.activatedRoute.snapshot.paramMap.get('id');
+        }
+
+        this.addForm = this.fb.group({
+          sales_order_id: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required])],
+          receipt_date: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required])],
+          client_id: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required])],
+          pick_list_no: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required])],
+          pack_type: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required])],
+          product_detail_list: []
+        });
       }
 
       _createClass(AddPackingComponent, [{
         key: "ngOnInit",
-        value: function ngOnInit() {}
+        value: function ngOnInit() {
+          // if (this.isEditing) {
+          //   this.getEditObject()
+          // }
+          this.getMasterData();
+        }
+      }, {
+        key: "getMasterData",
+        value: function getMasterData() {
+          var _this = this;
+
+          this.packingService.getMasterData({}).subscribe(function (responce) {
+            if (responce.success) {
+              _this.orderNumberArray = responce.data.sales_order ? responce.data.sales_order : [];
+              _this.packTypeArray = responce.data.pack_type ? responce.data.pack_type : [];
+            }
+          });
+        }
+      }, {
+        key: "onOrderChange",
+        value: function onOrderChange(data) {
+          if (data && data.value) {
+            this.getSalesOrderDetail(data.value);
+            this.formErrors.order_id = null;
+          }
+        }
+      }, {
+        key: "getSalesOrderDetail",
+        value: function getSalesOrderDetail(id) {
+          var _this2 = this;
+
+          this.packingService.getSalesOrderDetail(id).subscribe(function (responce) {
+            if (responce.success) {
+              _this2.orderDetails = responce.data;
+
+              _this2.setdata();
+            }
+          });
+        }
+      }, {
+        key: "setdata",
+        value: function setdata() {
+          this.addForm.patchValue({
+            client_id: this.orderDetails.client_id.value,
+            pick_list_no: this.orderDetails.pick_list_no
+          });
+        }
+      }, {
+        key: "addProduct",
+        value: function addProduct() {
+          if (this.addForm.value.sales_order_id) {
+            this.productAdd.addObject();
+          } else {
+            this.formErrors.order_id = "* Please Select Order Number";
+          }
+        }
+      }, {
+        key: "onProductSubmit",
+        value: function onProductSubmit(data) {
+          var _this3 = this;
+
+          if (data && data.length > 0) {
+            data.filter(function (obj) {
+              if (obj.location_wise_product_list && obj.location_wise_product_list.length > 0) {
+                obj.location_wise_product_list.filter(function (data, i) {
+                  data['id'] = i;
+
+                  _this3.productDetailList.push(data);
+                });
+              }
+            });
+          }
+        }
+      }, {
+        key: "submitForm",
+        value: function submitForm(formData) {
+          var _this4 = this;
+
+          if (formData.valid) {
+            if (this.productDetailList && this.productDetailList.length > 0) {
+              this.formErrors.product = null;
+              this.showLoader = true;
+              var data = new FormData();
+              data.append('sales_order_id', formData.value.sales_order_id);
+              data.append('pack_type', formData.value.pack_type);
+              data.append('client_id', formData.value.client_id);
+              data.append('pick_list_no', formData.value.pick_list_no);
+              data.append('product_detail_list', JSON.stringify(this.productDetailList));
+
+              if (this.isEditing) {
+                this.packingService.editPacking(this.editId, data).subscribe(function (response) {
+                  _this4.showLoader = false;
+
+                  if (response.success) {
+                    _this4.router.navigateByUrl('/outbound/pick-list-new');
+                  } else {
+                    response.error.map(function (obj) {
+                      if (obj.hasOwnProperty('sales_order_id')) {
+                        _this4.formErrors['sales_order_id'] = obj['sales_order_id'];
+                      } else {
+                        _this4.formErrors['apierror'] = "* ".concat(response.error);
+                      }
+                    });
+                  }
+                }, function (error) {
+                  _this4.showLoader = false;
+                });
+              } else {
+                this.packingService.addPacking(data).subscribe(function (response) {
+                  _this4.showLoader = false;
+
+                  if (response.success) {
+                    _this4.router.navigateByUrl('/outbound/pick-list-new');
+                  } else {
+                    response.error.map(function (obj) {
+                      if (obj.hasOwnProperty('sales_order_id')) {
+                        _this4.formErrors['sales_order_id'] = obj['sales_order_id'];
+                      } else {
+                        _this4.formErrors['apierror'] = "* ".concat(response.error);
+                      }
+                    });
+                  }
+                }, function (error) {
+                  _this4.showLoader = false;
+                });
+              }
+            } else {
+              this.formErrors.product = "* Please Add Product";
+            }
+          }
+        }
       }]);
 
       return AddPackingComponent;
     }();
 
+    AddPackingComponent.ctorParameters = function () {
+      return [{
+        type: src_app_service_packing_service__WEBPACK_IMPORTED_MODULE_5__["PackingService"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"]
+      }, {
+        type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
+      }];
+    };
+
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(src_app_common_module_product_list_popup_product_list_popup_component__WEBPACK_IMPORTED_MODULE_2__["ProductListPopupComponent"], {
+      static: false
+    })], AddPackingComponent.prototype, "productAdd", void 0);
     AddPackingComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-add-packing',
       template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
@@ -213,6 +342,30 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! @angular/forms */
     "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var src_app_service_packing_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! src/app/service/packing.service */
+    "./src/app/service/packing.service.ts");
+    /* harmony import */
+
+
+    var src_app_shared_form_validation_form_validation_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! src/app/shared/form-validation/form-validation.module */
+    "./src/app/shared/form-validation/form-validation.module.ts");
+    /* harmony import */
+
+
+    var src_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    /*! src/app/shared/shared.module */
+    "./src/app/shared/shared.module.ts");
+    /* harmony import */
+
+
+    var src_app_common_module_product_list_popup_product_list_popup_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    /*! src/app/common-module/product-list-popup/product-list-popup.module */
+    "./src/app/common-module/product-list-popup/product-list-popup.module.ts");
 
     var routes = [{
       path: '',
@@ -225,7 +378,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     AddPackingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_add_packing_component__WEBPACK_IMPORTED_MODULE_3__["AddPackingComponent"]],
-      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(routes), _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_5__["NgSelectModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormsModule"]]
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"].forChild(routes), _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["ReactiveFormsModule"], src_app_shared_form_validation_form_validation_module__WEBPACK_IMPORTED_MODULE_8__["FormValidationModule"], src_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_9__["SharedModule"], _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_5__["NgSelectModule"], src_app_common_module_product_list_popup_product_list_popup_module__WEBPACK_IMPORTED_MODULE_10__["ProductListPopupModule"]],
+      providers: [src_app_service_packing_service__WEBPACK_IMPORTED_MODULE_7__["PackingService"]]
     })], AddPackingModule);
     /***/
   }

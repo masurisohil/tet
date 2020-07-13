@@ -207,9 +207,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'registeration',
       loadChildren: function loadChildren() {
-        return Promise.all(
+        return __webpack_require__.e(
         /*! import() | registeration-registeration-module */
-        [__webpack_require__.e("common"), __webpack_require__.e("registeration-registeration-module")]).then(__webpack_require__.bind(null,
+        "registeration-registeration-module").then(__webpack_require__.bind(null,
         /*! ./registeration/registeration.module */
         "./src/app/pages/inbound/registeration/registeration.module.ts")).then(function (m) {
           return m.RegisterationModule;
@@ -218,9 +218,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'product-config',
       loadChildren: function loadChildren() {
-        return Promise.all(
+        return __webpack_require__.e(
         /*! import() | product-config-product-config-list-product-config-list-module */
-        [__webpack_require__.e("common"), __webpack_require__.e("product-config-product-config-list-product-config-list-module")]).then(__webpack_require__.bind(null,
+        "product-config-product-config-list-product-config-list-module").then(__webpack_require__.bind(null,
         /*! ./product-config/product-config-list/product-config-list.module */
         "./src/app/pages/inbound/product-config/product-config-list/product-config-list.module.ts")).then(function (m) {
           return m.ProductConfigListModule;
@@ -229,9 +229,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'put-away',
       loadChildren: function loadChildren() {
-        return Promise.all(
+        return __webpack_require__.e(
         /*! import() | put-away-put-away-module */
-        [__webpack_require__.e("common"), __webpack_require__.e("put-away-put-away-module")]).then(__webpack_require__.bind(null,
+        "put-away-put-away-module").then(__webpack_require__.bind(null,
         /*! ./put-away/put-away.module */
         "./src/app/pages/inbound/put-away/put-away.module.ts")).then(function (m) {
           return m.PutAwayModule;
@@ -380,7 +380,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-order-add-order-module */
-        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null,
         /*! ./add-order/add-order.module */
         "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(function (m) {
           return m.AddOrderModule;
@@ -394,7 +394,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | add-order-add-order-module */
-        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("common"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~add-bin-transfer-add-bin-transfer-module~add-configuration-add-configuration-module~add-orde~79bd05af"), __webpack_require__.e("add-order-add-order-module")]).then(__webpack_require__.bind(null,
         /*! ./add-order/add-order.module */
         "./src/app/pages/inbound/order/add-order/add-order.module.ts")).then(function (m) {
           return m.AddOrderModule;
@@ -2098,9 +2098,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }, {
       path: 'generate-unloading',
       loadChildren: function loadChildren() {
-        return Promise.all(
+        return __webpack_require__.e(
         /*! import() | generate-unloading-generate-unloading-module */
-        [__webpack_require__.e("common"), __webpack_require__.e("generate-unloading-generate-unloading-module")]).then(__webpack_require__.bind(null,
+        "generate-unloading-generate-unloading-module").then(__webpack_require__.bind(null,
         /*! ./generate-unloading/generate-unloading.module */
         "./src/app/pages/inbound/unload/generate-unloading/generate-unloading.module.ts")).then(function (m) {
           return m.GenerateUnloadingModule;
