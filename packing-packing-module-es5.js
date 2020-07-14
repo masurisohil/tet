@@ -468,7 +468,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "addPacking",
         value: function addPacking(data) {
-          return this.http.post("".concat(this.API_URL, "/picking/generate"), data);
+          return this.http.post("".concat(this.API_URL, "/packing/generate"), data);
         }
       }, {
         key: "editPacking",

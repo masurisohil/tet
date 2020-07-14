@@ -274,7 +274,7 @@ let PackingService = class PackingService {
         return this.http.get(`${this.API_URL}/packing/get-product-for-packing/${id}`);
     }
     addPacking(data) {
-        return this.http.post(`${this.API_URL}/picking/generate`, data);
+        return this.http.post(`${this.API_URL}/packing/generate`, data);
     }
     editPacking(id, data) {
         return this.http.put(`${this.API_URL}/Packing/${id}`, data);
