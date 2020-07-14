@@ -21,7 +21,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"container-fluid\">\r\n  <div class=\"page-header\">\r\n    <div class=\"row\">\r\n      <div class=\"col\">\r\n        <h2 class=\"mr-auto\">{{ isEditing ? 'Update' : 'Generate' }} {{PageTitle}}</h2>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"card\">\r\n    <form [formGroup]=\"addForm\" (ngSubmit)=\"submitForm(addForm)\" class=\"form-horizontal\" role=\"form\">\r\n      <div class=\"card-body\">\r\n        <div>\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">Order Number <em>*</em></label>\r\n            <div class=\"col-md-5\">\r\n\r\n\r\n              <ng-container *ngIf=\"OrderId_show; then thenTemplate; else elseTemplate\"></ng-container>\r\n              <ng-template #thenTemplate>\r\n                <ng-select [formControl]=\"addForm.controls['order_id']\" (change)=\"getProductByOrderId()\"\r\n                  [items]=\"orderListArray\" bindLabel=\"label\" bindValue=\"value\" placeholder=\"Select Order Number\">\r\n                </ng-select>\r\n\r\n              </ng-template>\r\n              <ng-template #elseTemplate>\r\n                <select disabled class=\"form-control\">\r\n                  <option default selected=\"true\" disabled hidden value=\"OrderDetails?.po_no\">{{OrderDetails?.po_no}}\r\n                  </option>\r\n                </select>\r\n              </ng-template>\r\n\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">Transfer Order No\r\n              <em>*</em></label>\r\n            <div class=\"col-md-5\">\r\n              <input [formControl]=\"addForm.controls['transfer_order_no']\" type=\"text\" class=\"form-control\"\r\n                placeholder=\"\">\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">Case No <em>*</em></label>\r\n            <div class=\"col-md-5\">\r\n              <input [formControl]=\"addForm.controls['case_no']\" type=\"text\" class=\"form-control\" placeholder=\"\">\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">SKU <em>*</em></label>\r\n            <div class=\"col-md-5\">\r\n              <ng-select [formControl]=\"addForm.controls['sku_no']\" [items]=\"skuListArray\" bindLabel=\"label\"\r\n                bindValue=\"value\" placeholder=\"Select SKU No\" (change)=\"setProductDetail($event)\">\r\n              </ng-select>\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">Bin <em>*</em></label>\r\n            <div class=\"col-md-5\">\r\n              <ng-select [formControl]=\"addForm.controls['bin_id']\" [items]=\"binListArray\" bindLabel=\"label\"\r\n                bindValue=\"value\" placeholder=\"Select Bin\" (change)=\"setBinDetail($event)\">\r\n              </ng-select>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">Location</label>\r\n            <div class=\"col-md-5\">\r\n              <input [formControl]=\"addForm.controls['location']\" type=\"text\" class=\"form-control\" placeholder=\"\"\r\n                disabled>\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">Total Quantity\r\n              <em>*</em></label>\r\n            <div class=\"col-md-5\">\r\n              <input [formControl]=\"addForm.controls['qty']\" type=\"text\" class=\"form-control\" placeholder=\"\" disabled>\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">Open Quantity\r\n              <em>*</em></label>\r\n            <div class=\"col-md-5\">\r\n              <input type=\"text\" class=\"form-control\" placeholder=\"\" disabled>\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">Putaway Quantity\r\n              <em>*</em></label>\r\n            <div class=\"col-md-5\">\r\n              <input number [formControl]=\"addForm.controls['putaway_qty']\" (input)=\"calPutawayQuantity()\" type=\"text\"\r\n                class=\"form-control\" placeholder=\"\">\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">No of Putaway\r\n              <em>*</em></label>\r\n            <div class=\"col-md-5\">\r\n              <input number (input)=\"calNoPutaway()\" [formControl]=\"addForm.controls['pick_qty']\" type=\"text\"\r\n                class=\"form-control\" placeholder=\"\">\r\n            </div>\r\n          </div>\r\n\r\n\r\n        </div>\r\n      </div>\r\n      <div class=\"text-right border-top py-4 mt-5 card-footer\">\r\n        <button type=\"button\" class=\"btn btn-light\" (click)=\"back()\">Cancel</button>\r\n        <button type=\"submit\" class=\"btn btn-secondary ml-2\">Submit</button>\r\n      </div>\r\n    </form>\r\n\r\n  </div>\r\n</div>\r\n";
+    __webpack_exports__["default"] = "<div class=\"container-fluid\">\r\n  <div class=\"page-header\">\r\n    <div class=\"row\">\r\n      <div class=\"col\">\r\n        <h2 class=\"mr-auto\">{{ isEditing ? 'Update' : 'Generate' }} {{PageTitle}}</h2>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div class=\"card\">\r\n    <form [formGroup]=\"addForm\" (ngSubmit)=\"submitForm(addForm)\" class=\"form-horizontal\" role=\"form\">\r\n      <div class=\"card-body\">\r\n        <div>\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">Order Number <em>*</em></label>\r\n            <div class=\"col-md-5\">\r\n\r\n\r\n              <ng-container *ngIf=\"OrderId_show; then thenTemplate; else elseTemplate\"></ng-container>\r\n              <ng-template #thenTemplate>\r\n                <ng-select [formControl]=\"addForm.controls['order_id']\" (change)=\"getProductByOrderId()\"\r\n                  [items]=\"orderListArray\" bindLabel=\"label\" bindValue=\"value\" placeholder=\"Select Order Number\">\r\n                </ng-select>\r\n\r\n              </ng-template>\r\n              <ng-template #elseTemplate>\r\n                <select disabled class=\"form-control\">\r\n                  <option default selected=\"true\" disabled hidden value=\"OrderDetails?.po_no\">{{OrderDetails?.po_no}}\r\n                  </option>\r\n                </select>\r\n              </ng-template>\r\n\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">Transfer Order No\r\n              <em>*</em></label>\r\n            <div class=\"col-md-5\">\r\n              <input [formControl]=\"addForm.controls['transfer_order_no']\" type=\"text\" class=\"form-control\"\r\n                placeholder=\"\">\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">Case No <em>*</em></label>\r\n            <div class=\"col-md-5\">\r\n              <input [formControl]=\"addForm.controls['case_no']\" type=\"text\" class=\"form-control\" placeholder=\"\">\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">SKU <em>*</em></label>\r\n            <div class=\"col-md-5\">\r\n              <ng-select [formControl]=\"addForm.controls['sku_no']\" [items]=\"skuListArray\" bindLabel=\"label\"\r\n                bindValue=\"value\" placeholder=\"Select SKU No\" (change)=\"setTaglist($event)\">\r\n              </ng-select>\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">Tag <em>*</em></label>\r\n            <div class=\"col-md-5\">\r\n              <ng-select [formControl]=\"addForm.controls['tag_id']\" [items]=\"tagListArray\" bindLabel=\"label\"\r\n                bindValue=\"value\" placeholder=\"Select Tag\" (change)=\"setProductDetail($event)\">\r\n              </ng-select>\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">Bin <em>*</em></label>\r\n            <div class=\"col-md-5\">\r\n              <ng-select [formControl]=\"addForm.controls['bin_id']\" [items]=\"binListArray\" bindLabel=\"label\"\r\n                bindValue=\"value\" placeholder=\"Select Bin\" (change)=\"setBinDetail($event)\">\r\n              </ng-select>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">Location</label>\r\n            <div class=\"col-md-5\">\r\n              <input [formControl]=\"addForm.controls['location']\" type=\"text\" class=\"form-control\" placeholder=\"\"\r\n                disabled>\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">Total Quantity\r\n              <em>*</em></label>\r\n            <div class=\"col-md-5\">\r\n              <input [formControl]=\"addForm.controls['qty']\" type=\"text\" class=\"form-control\" placeholder=\"\" disabled>\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">Open Quantity\r\n              <em>*</em></label>\r\n            <div class=\"col-md-5\">\r\n              <input type=\"text\" class=\"form-control\" placeholder=\"\" disabled>\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">Putaway Quantity\r\n              <em>*</em></label>\r\n            <div class=\"col-md-5\">\r\n              <input number [formControl]=\"addForm.controls['putaway_qty']\" (input)=\"calPutawayQuantity()\" type=\"text\"\r\n                class=\"form-control\" placeholder=\"\">\r\n              <!-- <span *ngIf=\"formErrors.putaway_qty\" class=\"help-block\" [innerHTML]=\"formErrors.putaway_qty\"></span> -->\r\n            </div>\r\n          </div>\r\n          <div class=\"form-group row\">\r\n            <label class=\"control-label text-md-right col-md-4 col-lg-3\">No of Putaway\r\n              <em>*</em></label>\r\n            <div class=\"col-md-5\">\r\n              <input number (input)=\"calNoPutaway()\" [formControl]=\"addForm.controls['pick_qty']\" type=\"text\"\r\n                class=\"form-control\" placeholder=\"\">\r\n            </div>\r\n          </div>\r\n\r\n\r\n        </div>\r\n      </div>\r\n      <div class=\"text-right border-top py-4 mt-5 card-footer\">\r\n        <button type=\"button\" class=\"btn btn-light\" (click)=\"back()\">Cancel</button>\r\n        <button type=\"submit\" class=\"btn btn-secondary ml-2\">Submit</button>\r\n      </div>\r\n    </form>\r\n\r\n  </div>\r\n</div>";
     /***/
   },
 
@@ -123,10 +123,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.addNewRadio = false;
         this.loadingState = false;
         this.binListArray = [];
+        this.tagListArray = [];
         this.skuListArray = [];
         this.orderListArray = [];
         this.showLoader = false;
         this.formErrors = {
+          putaway_qty: null,
           apierror: null
         };
         this.isEditing = false;
@@ -140,6 +142,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           pick_qty: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
           bin_id: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
           bin_tag_id: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
+          tag_id: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
           location: [null],
           level_id: [null],
           bay_id: [null],
@@ -198,6 +201,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.putawayService.getProductByOrderId(this.addForm.value.order_id).subscribe(function (response) {
             if (response.success) {
               _this2.skuListArray = response.data.product;
+
+              if (_this2.isEditing) {
+                _this2.skuListArray.map(function (obj) {
+                  if (obj.value == _this2.addForm.value.sku_no) {
+                    _this2.tagListArray = obj.tag_list;
+                  }
+                });
+              }
             }
           });
         }
@@ -218,6 +229,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 sku_no: response.data.sku_no,
                 pick_qty: response.data.pick_qty,
                 bin_id: response.data.bin_id,
+                tag_id: response.data.tag_id,
                 bin_tag_id: response.data.bin_tag_id,
                 putaway_qty: response.data.put_away_qty,
                 location: location_text,
@@ -251,11 +263,30 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }
         }
       }, {
+        key: "setTaglist",
+        value: function setTaglist(data) {
+          console.log("data", data);
+          this.addForm.patchValue({
+            tag_id: null,
+            qty: null
+          });
+
+          if (data) {
+            this.tagListArray = data.tag_list ? data.tag_list : [];
+          } else {
+            this.tagListArray = [];
+          }
+        }
+      }, {
         key: "setProductDetail",
         value: function setProductDetail(data) {
           if (data) {
             this.addForm.patchValue({
-              qty: data.qty
+              qty: data.quantity
+            });
+          } else {
+            this.addForm.patchValue({
+              qty: null
             });
           }
         }
@@ -273,6 +304,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             data.append('sku_no', formData.value.sku_no);
             data.append('pick_qty', formData.value.pick_qty);
             data.append('bin_id', formData.value.bin_id);
+            data.append('tag_id', formData.value.tag_id);
             data.append('bin_tag_id', formData.value.bin_tag_id);
             data.append('putaway_qty', formData.value.putaway_qty);
             data.append('location', formData.value.location);
@@ -339,8 +371,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "calPutawayQuantity",
         value: function calPutawayQuantity() {
           var total = this.addForm.value.qty;
-          var no_of_putaway = this.addForm.value.putaway_qty;
-          var new_on_of_qty = Number(total / no_of_putaway);
+          var putaway_qty = this.addForm.value.putaway_qty;
+          var new_on_of_qty = Number(total / putaway_qty); // if (putaway_qty <= total) {
+          //   this.formErrors.putaway_qty = null;
+          //   this.addForm.controls['putaway_qty'].setErrors(null);
+          // } else {
+          //   this.formErrors.putaway_qty = "* Please Enter equval or small value in Total Qunatity";
+          //   this.addForm.controls['putaway_qty'].setErrors({ 'incorrect': true });
+          // }
 
           if (isFinite(new_on_of_qty)) {
             this.addForm.patchValue({

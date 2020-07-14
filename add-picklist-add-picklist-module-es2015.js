@@ -123,6 +123,7 @@ let AddPicklistComponent = class AddPicklistComponent {
             this.productAdd.addObject();
         }
         else {
+            // this.addForm.controls['sales_order_id'].setErrors({ 'incorrect': true });
             this.formErrors.order_id = "* Please Select Order Number";
         }
     }
