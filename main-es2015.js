@@ -2247,7 +2247,7 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     // APIEndpoint: 'http://192.168.1.138:9005/api',
-    APIEndpoint: 'https://cb7b93cd2a34.ngrok.io/api'
+    APIEndpoint: 'https://7bc2956145c5.ngrok.io/api'
 };
 /*
  * For easier debugging in development mode, you can import the following file
