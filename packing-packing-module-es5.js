@@ -115,26 +115,25 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function setHeaderData() {
           this.headerData.push(new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["IndexField"]({
             label: "No."
+          }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextViewUrlField"]({
+            label: "Pick No",
+            key: "pick_no",
+            viewUrl: {
+              path: '/outbound/packing/view/',
+              id: 'sales_order_id'
+            }
           }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["DateField"]({
-            label: "Order Date",
+            label: "Order No",
             key: "sales_order_date"
-          }), // new TextViewUrlField({
-          //   label: "Pick No",
-          //   key: "pick_no",
-          //   viewUrl: {
-          //     path: '/outbound/pick-list-new/view/',
-          //     id: 'sales_order_id'
-          //   }
-          // }),
-          new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextField"]({
-            label: "Product Code",
+          }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextField"]({
+            label: "Order Code",
             key: 'sales_order_no'
           }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextField"]({
-            label: "Product Name",
+            label: "Client",
             key: "client.label"
-          }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["DateField"]({
-            label: "Delivery Date",
-            key: "po_date"
+          }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextField"]({
+            label: "Client Code",
+            key: "client.client_code"
           }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["StatusField"]({
             label: "Status",
             key: "status.label"
@@ -146,21 +145,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           if (canEdit) {
             actions['edit'] = {
-              path: '/outbound/pick-list-new/edit/',
+              path: '/outbound/packing/edit/',
               id: 'sales_order_id'
             };
           }
 
           if (canView) {
             actions['view'] = {
-              path: '/outbound/pick-list-new/view/',
+              path: '/outbound/packing/view/',
               id: 'sales_order_id'
             };
           }
 
           if (canDelete) {
             actions['delete'] = {
-              path: 'picking/sales-order-list/',
+              path: 'packing/sales-order-list/',
               id: 'sales_order_id'
             };
           }
@@ -338,7 +337,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       path: '',
       component: _packing_component__WEBPACK_IMPORTED_MODULE_10__["PackingComponent"],
       data: {
-        title: 'pick_list_list'
+        title: 'packing_list'
       }
     }, {
       path: 'add',
@@ -352,7 +351,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         });
       },
       data: {
-        title: 'add_pick_list'
+        title: 'add_packing'
       }
     }, {
       path: 'edit/:id',
@@ -366,7 +365,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         });
       },
       data: {
-        title: 'edit_pick_list'
+        title: 'edit_packing'
+      }
+    }, {
+      path: 'view/:id',
+      loadChildren: function loadChildren() {
+        return __webpack_require__.e(
+        /*! import() | packing-view-packing-view-module */
+        "packing-view-packing-view-module").then(__webpack_require__.bind(null,
+        /*! ./packing-view/packing-view.module */
+        "./src/app/pages/outbound/packing/packing-view/packing-view.module.ts")).then(function (m) {
+          return m.PackingViewModule;
+        });
+      },
+      data: {
+        title: 'view_packing'
       }
     }];
 
@@ -441,14 +454,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "getListFilterData",
         value: function getListFilterData() {
           var param = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-          return this.http.get("".concat(this.API_URL, "/picking/list-filter-drp"), {
+          return this.http.get("".concat(this.API_URL, "/packing/list-filter-drp"), {
             params: param
           });
         }
       }, {
         key: "getPackingList",
         value: function getPackingList(param) {
-          return this.http.get("".concat(this.API_URL, "/picking/sales-order-list"), {
+          return this.http.get("".concat(this.API_URL, "/packing/sales-order-list"), {
             params: param
           });
         } // add page
@@ -474,12 +487,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "editPacking",
         value: function editPacking(id, data) {
           return this.http.put("".concat(this.API_URL, "/Packing/").concat(id), data);
-        }
+        } // getPackingById(id, param = null): Observable<any> {
+        //     return this.http.get(`${this.API_URL}/picking/sales-order-view-pick-list/${id}`, { params: param });
+        // }
+
       }, {
-        key: "getPackingById",
-        value: function getPackingById(id) {
+        key: "getPackingviewOrderById",
+        value: function getPackingviewOrderById(id) {
           var param = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-          return this.http.get("".concat(this.API_URL, "/picking/sales-order-view-pick-list/").concat(id), {
+          return this.http.get("".concat(this.API_URL, "/packing/sales-order-view-packing-list/").concat(id), {
             params: param
           });
         }

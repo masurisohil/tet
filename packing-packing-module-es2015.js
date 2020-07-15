@@ -60,27 +60,25 @@ let PackingComponent = class PackingComponent {
     setHeaderData() {
         this.headerData.push(new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["IndexField"]({
             label: "No.",
+        }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextViewUrlField"]({
+            label: "Pick No",
+            key: "pick_no",
+            viewUrl: {
+                path: '/outbound/packing/view/',
+                id: 'sales_order_id'
+            }
         }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["DateField"]({
-            label: "Order Date",
+            label: "Order No",
             key: "sales_order_date",
-        }), 
-        // new TextViewUrlField({
-        //   label: "Pick No",
-        //   key: "pick_no",
-        //   viewUrl: {
-        //     path: '/outbound/pick-list-new/view/',
-        //     id: 'sales_order_id'
-        //   }
-        // }),
-        new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextField"]({
-            label: "Product Code",
+        }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextField"]({
+            label: "Order Code",
             key: 'sales_order_no',
         }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextField"]({
-            label: "Product Name",
+            label: "Client",
             key: "client.label",
-        }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["DateField"]({
-            label: "Delivery Date",
-            key: "po_date",
+        }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextField"]({
+            label: "Client Code",
+            key: "client.client_code",
         }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["StatusField"]({
             label: "Status",
             key: "status.label",
@@ -91,19 +89,19 @@ let PackingComponent = class PackingComponent {
         let actions = {};
         if (canEdit) {
             actions['edit'] = {
-                path: '/outbound/pick-list-new/edit/',
+                path: '/outbound/packing/edit/',
                 id: 'sales_order_id'
             };
         }
         if (canView) {
             actions['view'] = {
-                path: '/outbound/pick-list-new/view/',
+                path: '/outbound/packing/view/',
                 id: 'sales_order_id'
             };
         }
         if (canDelete) {
             actions['delete'] = {
-                path: 'picking/sales-order-list/',
+                path: 'packing/sales-order-list/',
                 id: 'sales_order_id'
             };
         }
@@ -201,17 +199,22 @@ const routes = [
     {
         path: '',
         component: _packing_component__WEBPACK_IMPORTED_MODULE_10__["PackingComponent"],
-        data: { title: 'pick_list_list' },
+        data: { title: 'packing_list' },
     },
     {
         path: 'add',
         loadChildren: () => Promise.all(/*! import() | add-packing-add-packing-module */[__webpack_require__.e("default~add-packing-add-packing-module~add-picklist-add-picklist-module"), __webpack_require__.e("add-packing-add-packing-module")]).then(__webpack_require__.bind(null, /*! ./add-packing/add-packing.module */ "./src/app/pages/outbound/packing/add-packing/add-packing.module.ts")).then(m => m.AddPackingModule),
-        data: { title: 'add_pick_list' },
+        data: { title: 'add_packing' },
     },
     {
         path: 'edit/:id',
         loadChildren: () => Promise.all(/*! import() | add-packing-add-packing-module */[__webpack_require__.e("default~add-packing-add-packing-module~add-picklist-add-picklist-module"), __webpack_require__.e("add-packing-add-packing-module")]).then(__webpack_require__.bind(null, /*! ./add-packing/add-packing.module */ "./src/app/pages/outbound/packing/add-packing/add-packing.module.ts")).then(m => m.AddPackingModule),
-        data: { title: 'edit_pick_list' },
+        data: { title: 'edit_packing' },
+    },
+    {
+        path: 'view/:id',
+        loadChildren: () => __webpack_require__.e(/*! import() | packing-view-packing-view-module */ "packing-view-packing-view-module").then(__webpack_require__.bind(null, /*! ./packing-view/packing-view.module */ "./src/app/pages/outbound/packing/packing-view/packing-view.module.ts")).then(m => m.PackingViewModule),
+        data: { title: 'view_packing' },
     },
 ];
 let PackingModule = class PackingModule {
@@ -261,10 +264,10 @@ let PackingService = class PackingService {
     }
     //list page
     getListFilterData(param = null) {
-        return this.http.get(`${this.API_URL}/picking/list-filter-drp`, { params: param });
+        return this.http.get(`${this.API_URL}/packing/list-filter-drp`, { params: param });
     }
     getPackingList(param) {
-        return this.http.get(`${this.API_URL}/picking/sales-order-list`, { params: param });
+        return this.http.get(`${this.API_URL}/packing/sales-order-list`, { params: param });
     }
     // add page
     getMasterData(param) {
@@ -279,8 +282,11 @@ let PackingService = class PackingService {
     editPacking(id, data) {
         return this.http.put(`${this.API_URL}/Packing/${id}`, data);
     }
-    getPackingById(id, param = null) {
-        return this.http.get(`${this.API_URL}/picking/sales-order-view-pick-list/${id}`, { params: param });
+    // getPackingById(id, param = null): Observable<any> {
+    //     return this.http.get(`${this.API_URL}/picking/sales-order-view-pick-list/${id}`, { params: param });
+    // }
+    getPackingviewOrderById(id, param = null) {
+        return this.http.get(`${this.API_URL}/packing/sales-order-view-packing-list/${id}`, { params: param });
     }
 };
 PackingService.ctorParameters = () => [
