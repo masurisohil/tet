@@ -103,17 +103,21 @@ let AddPackingComponent = class AddPackingComponent {
         }
     }
     onProductSubmit(data) {
-        this.productDetailList = data;
-        // if (data && data.length > 0) {
-        //   data.filter((obj) => {
-        //     if (obj.tag_list && obj.tag_list.length > 0) {
-        //       obj.tag_list.filter((data, i) => {
-        //         data['id'] = i;
-        //         this.productDetailList.push(data)
-        //       });
-        //     }
-        //   });
-        // }
+        console.log("data", data);
+        this.productDetailList = [];
+        if (data && data.length > 0) {
+            data.filter((obj) => {
+                if (obj.tag_list && obj.tag_list.length > 0) {
+                    obj.tag_list.filter((temp, i) => {
+                        temp['id'] = i;
+                        this.productDetailList.push(temp);
+                    });
+                }
+            });
+        }
+        else {
+            this.productDetailList = [];
+        }
     }
     submitForm(formData) {
         if (formData.valid) {

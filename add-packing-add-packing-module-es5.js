@@ -171,21 +171,29 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "onProductSubmit",
         value: function onProductSubmit(data) {
-          this.productDetailList = data; // if (data && data.length > 0) {
-          //   data.filter((obj) => {
-          //     if (obj.tag_list && obj.tag_list.length > 0) {
-          //       obj.tag_list.filter((data, i) => {
-          //         data['id'] = i;
-          //         this.productDetailList.push(data)
-          //       });
-          //     }
-          //   });
-          // }
+          var _this3 = this;
+
+          console.log("data", data);
+          this.productDetailList = [];
+
+          if (data && data.length > 0) {
+            data.filter(function (obj) {
+              if (obj.tag_list && obj.tag_list.length > 0) {
+                obj.tag_list.filter(function (temp, i) {
+                  temp['id'] = i;
+
+                  _this3.productDetailList.push(temp);
+                });
+              }
+            });
+          } else {
+            this.productDetailList = [];
+          }
         }
       }, {
         key: "submitForm",
         value: function submitForm(formData) {
-          var _this3 = this;
+          var _this4 = this;
 
           if (formData.valid) {
             if (this.productDetailList && this.productDetailList.length > 0) {
@@ -212,39 +220,39 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
               if (this.isEditing) {
                 this.packingService.editPacking(this.editId, data).subscribe(function (response) {
-                  _this3.showLoader = false;
+                  _this4.showLoader = false;
 
                   if (response.success) {
-                    _this3.router.navigateByUrl('/outbound/pick-list-new');
+                    _this4.router.navigateByUrl('/outbound/pick-list-new');
                   } else {
                     response.error.map(function (obj) {
                       if (obj.hasOwnProperty('sales_order_id')) {
-                        _this3.formErrors['sales_order_id'] = obj['sales_order_id'];
+                        _this4.formErrors['sales_order_id'] = obj['sales_order_id'];
                       } else {
-                        _this3.formErrors['apierror'] = "* ".concat(response.error);
+                        _this4.formErrors['apierror'] = "* ".concat(response.error);
                       }
                     });
                   }
                 }, function (error) {
-                  _this3.showLoader = false;
+                  _this4.showLoader = false;
                 });
               } else {
                 this.packingService.addPacking(data).subscribe(function (response) {
-                  _this3.showLoader = false;
+                  _this4.showLoader = false;
 
                   if (response.success) {
-                    _this3.router.navigateByUrl('/outbound/pick-list-new');
+                    _this4.router.navigateByUrl('/outbound/pick-list-new');
                   } else {
                     response.error.map(function (obj) {
                       if (obj.hasOwnProperty('sales_order_id')) {
-                        _this3.formErrors['sales_order_id'] = obj['sales_order_id'];
+                        _this4.formErrors['sales_order_id'] = obj['sales_order_id'];
                       } else {
-                        _this3.formErrors['apierror'] = "* ".concat(response.error);
+                        _this4.formErrors['apierror'] = "* ".concat(response.error);
                       }
                     });
                   }
                 }, function (error) {
-                  _this3.showLoader = false;
+                  _this4.showLoader = false;
                 });
               }
             } else {
