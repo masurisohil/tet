@@ -21,7 +21,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"container-fluid\">\r\n    <div class=\"page-header\">\r\n        <div class=\"row\">\r\n            <div class=\"col d-flex\">\r\n                <h2 class=\"mr-auto\">Picking new</h2>\r\n                <div>\r\n                    <ng-select style=\"width: 180px;\" [(ngModel)]=\"status_id\" (change)=\"getObjects()\"\r\n                        [items]=\"statusListArray\" bindLabel=\"label\" bindValue=\"value\" placeholder=\"Select Status\">\r\n                    </ng-select>\r\n                </div>\r\n                <div class=\"ml-3\">\r\n                    <search-box (text)=\"searchObject($event)\" [placeholder]=\"'Search Here...'\"></search-box>\r\n                </div>\r\n                <div class=\"ml-3\">\r\n                    <app-btn-add [btnName]=\"'Add Packing'\" [editData]=\"'/outbound/packing/add'\">\r\n                    </app-btn-add>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"card\">\r\n        <div class=\"card-body\">\r\n            <app-table-list [headerData]=\"headerData\" [rawData]=\"objectArray\" (reloadEvent)=\"onReloadEvent()\">\r\n            </app-table-list>\r\n            <pagination [paginationList]=\"pagination\" [currentPage]=\"currentPage\" (onPageChange)=\"getPage($event)\">\r\n            </pagination>\r\n        </div>\r\n    </div>\r\n</div>";
+    __webpack_exports__["default"] = "<div class=\"container-fluid\">\r\n    <div class=\"page-header\">\r\n        <div class=\"row\">\r\n            <div class=\"col d-flex\">\r\n                <h2 class=\"mr-auto\">Manage Packing</h2>\r\n                <div>\r\n                    <ng-select style=\"width: 180px;\" [(ngModel)]=\"status_id\" (change)=\"getObjects()\"\r\n                        [items]=\"statusListArray\" bindLabel=\"label\" bindValue=\"value\" placeholder=\"Select Status\">\r\n                    </ng-select>\r\n                </div>\r\n                <div class=\"ml-3\">\r\n                    <search-box (text)=\"searchObject($event)\" [placeholder]=\"'Search Here...'\"></search-box>\r\n                </div>\r\n                <div class=\"ml-3\">\r\n                    <app-btn-add [btnName]=\"'Add Packing'\" [editData]=\"'/outbound/packing/add'\">\r\n                    </app-btn-add>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"card\">\r\n        <div class=\"card-body\">\r\n            <app-table-list [headerData]=\"headerData\" [rawData]=\"objectArray\" (reloadEvent)=\"onReloadEvent()\">\r\n            </app-table-list>\r\n            <pagination [paginationList]=\"pagination\" [currentPage]=\"currentPage\" (onPageChange)=\"getPage($event)\">\r\n            </pagination>\r\n        </div>\r\n    </div>\r\n</div>";
     /***/
   },
 
@@ -113,21 +113,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "setHeaderData",
         value: function setHeaderData() {
-          this.headerData.push(new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["IndexField"]({
-            label: "No."
-          }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextViewUrlField"]({
-            label: "Pick No",
-            key: "pick_no",
-            viewUrl: {
-              path: '/outbound/packing/view/',
-              id: 'sales_order_id'
-            }
-          }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["DateField"]({
+          this.headerData.push( // new IndexField({
+          //   label: "No.",
+          // }),
+          // new TextViewUrlField({
+          //   label: "Pick No",
+          //   key: "pick_no",
+          //   viewUrl: {
+          //     path: '/outbound/packing/view/',
+          //     id: 'sales_order_id'
+          //   }
+          // }),
+          new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextField"]({
             label: "Order No",
-            key: "sales_order_date"
-          }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextField"]({
-            label: "Order Code",
             key: 'sales_order_no'
+          }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["DateField"]({
+            label: "Order Date",
+            key: "sales_order_date"
           }), new src_app_common_module_table_list_list_field_type__WEBPACK_IMPORTED_MODULE_3__["TextField"]({
             label: "Client",
             key: "client.label"
